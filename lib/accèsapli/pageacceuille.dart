@@ -249,6 +249,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
           padding: EdgeInsets.all(20),
           tabs: [
           GButton(icon: Icons.home,
+          
           iconSize: 30,
           text: ('Acceuille' ),
            onPressed: (){
@@ -256,7 +257,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                     return Page_acceuille();
                   }));
            },),
-          GButton(icon: Icons.bus_alert,
+          GButton(icon: Icons.airplane_ticket,
            iconSize: 30,
            
             onPressed: (){

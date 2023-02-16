@@ -5,7 +5,6 @@ import 'package:ukmoblie/acc%C3%A8sapli/pageacceuille.dart';
 class Profile_page extends StatefulWidget {
   Profile_page({super.key});
 
-
   @override
   State<Profile_page> createState() => _Profile_pageState();
 }
@@ -73,10 +72,90 @@ class _Profile_pageState extends State<Profile_page> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text('Profile')
+                    Text('Profile'),
                   ],
                 ),
               ),
+            ),
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text('Nom:'),
+                SizedBox(
+                  width: 80,
+                ),
+                Text('{$Nom}.text')
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text('Prénom:'),
+                SizedBox(
+                  width: 80,
+                ),
+                Text('{$Prenom}.text')
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text('Filière:'),
+                SizedBox(
+                  width: 80,
+                ),
+                Text('{$Filiere}.text')
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text('Département:'),
+                SizedBox(
+                  width: 80,
+                ),
+                Text('{$Departement}.text')
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text('Année d\'étude:'),
+                SizedBox(
+                  width: 80,
+                ),
+                Text('{$Annee}.text')
+              ],
             ),
           ),
         ],
@@ -194,7 +273,7 @@ class _Profile_pageState extends State<Profile_page> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 10),
                                 child: TextFormField(
-                                  controller: Annee ,
+                                  controller: Annee,
                                   decoration: const InputDecoration(
                                       enabledBorder: OutlineInputBorder(
                                           borderSide:
@@ -212,7 +291,13 @@ class _Profile_pageState extends State<Profile_page> {
                               ),
                               GestureDetector(
                                 onTap: () {
-                                  setState(() {});
+                                  setState(() {
+                                    Nom = TextEditingController();
+                                    Prenom = TextEditingController();
+                                    Filiere = TextEditingController();
+                                    Departement = TextEditingController();
+                                    Annee = TextEditingController();
+                                  });
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(
@@ -242,7 +327,8 @@ class _Profile_pageState extends State<Profile_page> {
           icon: Icon(Icons.edit)),
     );
   }
-    TextEditingController Nom = TextEditingController();
+
+  TextEditingController Nom = TextEditingController();
   TextEditingController Prenom = TextEditingController();
   TextEditingController Filiere = TextEditingController();
   TextEditingController Departement = TextEditingController();
