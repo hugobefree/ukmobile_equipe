@@ -44,6 +44,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                     style: GoogleFonts.orbitron(
                         fontSize: 11,
                         fontWeight: FontWeight.w800,
+                        
                         color: Colors.black),
                   ),
                 ],

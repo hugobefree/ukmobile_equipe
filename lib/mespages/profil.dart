@@ -3,13 +3,21 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ukmoblie/acc%C3%A8sapli/pageacceuille.dart';
 
 class Profile_page extends StatefulWidget {
-  Profile_page({super.key});
+  //
+
+  Profile_page({
+    super.key,
+    //
+  });
 
   @override
   State<Profile_page> createState() => _Profile_pageState();
 }
 
+// ignore: camel_case_types
 class _Profile_pageState extends State<Profile_page> {
+  //
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +63,7 @@ class _Profile_pageState extends State<Profile_page> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: 50,
+            height: 5,
           ),
           Padding(
             padding: const EdgeInsets.all(25.0),
@@ -90,7 +98,7 @@ class _Profile_pageState extends State<Profile_page> {
                 SizedBox(
                   width: 80,
                 ),
-                Text('{$Nom}.text')
+                Text(id1)
               ],
             ),
           ),
@@ -106,7 +114,7 @@ class _Profile_pageState extends State<Profile_page> {
                 SizedBox(
                   width: 80,
                 ),
-                Text('{$Prenom}.text')
+                Text(id2)
               ],
             ),
           ),
@@ -122,7 +130,7 @@ class _Profile_pageState extends State<Profile_page> {
                 SizedBox(
                   width: 80,
                 ),
-                Text('{$Filiere}.text')
+                Text(id3)
               ],
             ),
           ),
@@ -138,7 +146,7 @@ class _Profile_pageState extends State<Profile_page> {
                 SizedBox(
                   width: 80,
                 ),
-                Text('{$Departement}.text')
+                Text(id4)
               ],
             ),
           ),
@@ -154,7 +162,7 @@ class _Profile_pageState extends State<Profile_page> {
                 SizedBox(
                   width: 80,
                 ),
-                Text('{$Annee}.text')
+                Text(id5)
               ],
             ),
           ),
@@ -193,7 +201,7 @@ class _Profile_pageState extends State<Profile_page> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 10),
                                 child: TextFormField(
-                                  controller: Nom,
+                                  controller: ContollerNom,
                                   decoration: const InputDecoration(
                                       enabledBorder: OutlineInputBorder(
                                           borderSide:
@@ -213,7 +221,7 @@ class _Profile_pageState extends State<Profile_page> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 10),
                                 child: TextFormField(
-                                  controller: Prenom,
+                                  controller: ContollerPrenom,
                                   decoration: const InputDecoration(
                                       enabledBorder: OutlineInputBorder(
                                           borderSide:
@@ -233,7 +241,7 @@ class _Profile_pageState extends State<Profile_page> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 10),
                                 child: TextFormField(
-                                  controller: Filiere,
+                                  controller: ContollerFiliere,
                                   decoration: const InputDecoration(
                                       enabledBorder: OutlineInputBorder(
                                           borderSide:
@@ -253,7 +261,7 @@ class _Profile_pageState extends State<Profile_page> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 10),
                                 child: TextFormField(
-                                  controller: Departement,
+                                  controller: ContollerDepartement,
                                   decoration: const InputDecoration(
                                       enabledBorder: OutlineInputBorder(
                                           borderSide:
@@ -273,7 +281,7 @@ class _Profile_pageState extends State<Profile_page> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 10),
                                 child: TextFormField(
-                                  controller: Annee,
+                                  controller: ContollerAnnee,
                                   decoration: const InputDecoration(
                                       enabledBorder: OutlineInputBorder(
                                           borderSide:
@@ -286,17 +294,18 @@ class _Profile_pageState extends State<Profile_page> {
                                           TextStyle(color: Colors.white)),
                                 ),
                               ),
+                              // ignore: prefer_const_constructors
                               SizedBox(
                                 height: 50,
                               ),
                               GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    Nom = TextEditingController();
-                                    Prenom = TextEditingController();
-                                    Filiere = TextEditingController();
-                                    Departement = TextEditingController();
-                                    Annee = TextEditingController();
+                                    id1 = ContollerNom.text;
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return Profile_page();
+                                    }));
                                   });
                                 },
                                 child: Container(
@@ -328,9 +337,15 @@ class _Profile_pageState extends State<Profile_page> {
     );
   }
 
-  TextEditingController Nom = TextEditingController();
-  TextEditingController Prenom = TextEditingController();
-  TextEditingController Filiere = TextEditingController();
-  TextEditingController Departement = TextEditingController();
-  TextEditingController Annee = TextEditingController();
+  String id1 = '';
+  String id2 = '';
+  String id3 = '';
+  String id4 = '';
+  String id5 = '';
+
+  TextEditingController ContollerNom = TextEditingController();
+  TextEditingController ContollerPrenom = TextEditingController();
+  TextEditingController ContollerFiliere = TextEditingController();
+  TextEditingController ContollerDepartement = TextEditingController();
+  TextEditingController ContollerAnnee = TextEditingController();
 }
