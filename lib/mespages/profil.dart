@@ -12,10 +12,13 @@ class Profile_page extends StatefulWidget {
 
   @override
   State<Profile_page> createState() => _Profile_pageState();
+
+  
 }
 
 // ignore: camel_case_types
 class _Profile_pageState extends State<Profile_page> {
+
   //
 
   @override
@@ -98,7 +101,7 @@ class _Profile_pageState extends State<Profile_page> {
                 SizedBox(
                   width: 80,
                 ),
-                Text(id1)
+                Text('')
               ],
             ),
           ),
@@ -114,7 +117,7 @@ class _Profile_pageState extends State<Profile_page> {
                 SizedBox(
                   width: 80,
                 ),
-                Text(id2)
+                Text('')
               ],
             ),
           ),
@@ -130,7 +133,7 @@ class _Profile_pageState extends State<Profile_page> {
                 SizedBox(
                   width: 80,
                 ),
-                Text(id3)
+                Text('')
               ],
             ),
           ),
@@ -146,7 +149,7 @@ class _Profile_pageState extends State<Profile_page> {
                 SizedBox(
                   width: 80,
                 ),
-                Text(id4)
+                Text('')
               ],
             ),
           ),
@@ -162,7 +165,7 @@ class _Profile_pageState extends State<Profile_page> {
                 SizedBox(
                   width: 80,
                 ),
-                Text(id5)
+                Text('')
               ],
             ),
           ),
@@ -301,7 +304,6 @@ class _Profile_pageState extends State<Profile_page> {
                               GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    id1 = ContollerNom.text;
                                     Navigator.push(context,
                                         MaterialPageRoute(builder: (context) {
                                       return Profile_page();
@@ -337,15 +339,12 @@ class _Profile_pageState extends State<Profile_page> {
     );
   }
 
-  String id1 = '';
-  String id2 = '';
-  String id3 = '';
-  String id4 = '';
-  String id5 = '';
-
+  
   TextEditingController ContollerNom = TextEditingController();
   TextEditingController ContollerPrenom = TextEditingController();
   TextEditingController ContollerFiliere = TextEditingController();
   TextEditingController ContollerDepartement = TextEditingController();
   TextEditingController ContollerAnnee = TextEditingController();
+
+  
 }
