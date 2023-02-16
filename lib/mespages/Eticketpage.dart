@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ukmoblie/acc%C3%A8sapli/pageacceuille.dart';
 
-class Marketplace extends StatefulWidget {
-  const Marketplace({super.key});
+class Eticket extends StatefulWidget {
+  const Eticket({super.key});
 
   @override
-  State<Marketplace> createState() => _MarketplaceState();
+  State<Eticket> createState() => _EticketState();
 }
 
-class _MarketplaceState extends State<Marketplace> {
+class _EticketState extends State<Eticket> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +51,7 @@ class _MarketplaceState extends State<Marketplace> {
             )),
       ),
       body: Center(
-        child: Text('La marcket place sera bientot disponible ' , style: GoogleFonts.orbitron(
+        child: Text('Les e-tickets ne sont pas encore diponible ' , style: GoogleFonts.orbitron(
           fontSize: 17, 
           fontWeight: FontWeight.w600,
           color: Colors.black87

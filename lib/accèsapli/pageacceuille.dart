@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:ukmoblie/mespages/Eticketpage.dart';
+import 'package:ukmoblie/mespages/pageImmobilier.dart';
+import 'package:ukmoblie/mespages/pagemarket.dart';
 import 'package:ukmoblie/mespages/profil.dart';
 import 'package:ukmoblie/mespages/programme/pageprogrammNord.dart';
 import 'package:ukmoblie/mespages/programme/programmeSud.dart';
@@ -123,17 +126,25 @@ class _Page_acceuilleState extends State<Page_acceuille> {
             SizedBox(
               height: 20,
             ),
-            ListTile(
-              leading: Icon(
-                Icons.home,
-                color: Color.fromARGB(255, 205, 202, 32),
-              ),
-              title: Text(
-                'Trouver une chambre',
-                style: GoogleFonts.openSans(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.black),
+            GestureDetector(
+
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Immobilier();
+                  }));
+              },
+              child: ListTile(
+                leading: Icon(
+                  Icons.home,
+                  color: Color.fromARGB(255, 205, 202, 32),
+                ),
+                title: Text(
+                  'Trouver une chambre',
+                  style: GoogleFonts.openSans(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.black),
+                ),
               ),
             ),
             SizedBox(
@@ -155,17 +166,24 @@ class _Page_acceuilleState extends State<Page_acceuille> {
             SizedBox(
               height: 20,
             ),
-            ListTile(
-              leading: Icon(
-                Icons.store,
-                color: Color.fromARGB(255, 32, 205, 38),
-              ),
-              title: Text(
-                'Market Place',
-                style: GoogleFonts.openSans(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.black),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Marketplace();
+                  }));
+              },
+              child: ListTile(
+                leading: Icon(
+                  Icons.store,
+                  color: Color.fromARGB(255, 32, 205, 38),
+                ),
+                title: Text(
+                  'Market Place',
+                  style: GoogleFonts.openSans(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.black),
+                ),
               ),
             ),
             SizedBox(
@@ -241,13 +259,21 @@ class _Page_acceuilleState extends State<Page_acceuille> {
           GButton(icon: Icons.bus_alert,
            iconSize: 30,
            
-            onPressed: (){},
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Eticket();
+                  }));
+            },
            text: ('E-Ticket'),),
            
           GButton(icon: Icons.store,
            iconSize: 30,
            
-            onPressed: (){},
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Marketplace();
+                  }));
+            },
            text: ('Market place'),),
           GButton(icon: Icons.messenger,
            iconSize: 30,
