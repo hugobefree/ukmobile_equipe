@@ -83,7 +83,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                 child: GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Profile_page();
+                    return Profile_page( person: Profileclass.empty(),);
                   }));
               },
               child: Container(
@@ -107,7 +107,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
             GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Profile_page();
+                    return Profile_page( person: Profileclass.empty(),);
                   }));
               },
               child: ListTile(
