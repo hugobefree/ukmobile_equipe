@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:ukmoblie/mespages/Eticketpage.dart';
-import 'package:ukmoblie/mespages/pageImmobilier.dart';
+import 'package:ukmoblie/mespages/chambrepage/pageImmobilier.dart';
+import 'package:ukmoblie/mespages/pagejob.dart';
 import 'package:ukmoblie/mespages/pagemarket.dart';
-import 'package:ukmoblie/mespages/profil.dart';
+import 'package:ukmoblie/mespages/profils/profil.dart';
 import 'package:ukmoblie/mespages/programme/pageprogrammNord.dart';
 import 'package:ukmoblie/mespages/programme/programmeSud.dart';
+import 'package:ukmoblie/mespages/support_page/contacter_support.dart';
 
 class Page_acceuille extends StatefulWidget {
   const Page_acceuille({super.key});
@@ -151,17 +153,26 @@ class _Page_acceuilleState extends State<Page_acceuille> {
             SizedBox(
               height: 20,
             ),
-            ListTile(
-              leading: Icon(
-                Icons.work,
-                color: Color.fromARGB(255, 32, 58, 205),
-              ),
-              title: Text(
-                'Trouver un jod',
-                style: GoogleFonts.openSans(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.black),
+            GestureDetector(
+
+              onTap: () {
+                 Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Job_Page();
+                  }));
+                
+              },
+              child: ListTile(
+                leading: Icon(
+                  Icons.work,
+                  color: Color.fromARGB(255, 32, 58, 205),
+                ),
+                title: Text(
+                  'Trouver un job',
+                  style: GoogleFonts.openSans(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.black),
+                ),
               ),
             ),
             SizedBox(
@@ -234,7 +245,32 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                     fontWeight: FontWeight.w800,
                     color: Colors.black),
               ),
-            )
+            ), 
+             SizedBox(
+              height: 20,
+            ),
+            
+             GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Contacter_support();
+                  }));
+              },
+              child: ListTile(
+                leading: Icon(
+                  Icons.help,
+                  color: Color.fromARGB(255, 32, 205, 38),
+                ),
+                title: Text(
+                  'Aide',
+                  style: GoogleFonts.openSans(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.black),
+                ),
+              ),
+            ),
+           
           ]),
         ),
       ),
@@ -416,7 +452,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                 ),
                 Container(
                   height: 65,
-                  width: 400,
+                  width: 350,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(17),
                     color: Colors.yellow,
@@ -466,15 +502,115 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                 padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                 child: Column(
                   children: [
-                    Image.asset(
-                      "image/banier.png",
-                    ),
-                    Image.asset(
-                      "image/banier.png",
-                    ),
-                    Image.asset(
-                      "image/banier.png",
-                    )
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text('oportunuité 1' , style: GoogleFonts.openSans(
+                                  fontSize: 12.5, 
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white
+                                   ),),
+                        ),
+                      ),
+                      SizedBox(height: 10,),
+                       Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text('oportunuité 2' , style: GoogleFonts.openSans(
+                                  fontSize: 12.5, 
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.black
+                                   ),),
+                        ),
+                      ),
+                        SizedBox(height: 10,),
+                       Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text('oportunuité 3' , style: GoogleFonts.openSans(
+                                  fontSize: 12.5, 
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.black
+                                   ),),
+                        ),
+                      ),
+                        SizedBox(height: 10,),
+                       Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text('oportunuité 1' , style: GoogleFonts.openSans(
+                                  fontSize: 12.5, 
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.blue
+                                   ),),
+                        ),
+                      ),
+                        SizedBox(height: 10,),
+                       Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text('oportunuité 1' , style: GoogleFonts.openSans(
+                                  fontSize: 12.5, 
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.black
+                                   ),),
+                        ),
+                      ),
+                        SizedBox(height: 10,),
+                       Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text('oportunuité 1' , style: GoogleFonts.openSans(
+                                  fontSize: 12.5, 
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.red
+                                   ),),
+                        ),
+                      ),
+                        SizedBox(height: 10,),
+                       Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text('oportunuité 1' , style: GoogleFonts.openSans(
+                                  fontSize: 12.5, 
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.amber
+                                   ),),
+                        ),
+                      ),
+                        SizedBox(height: 10,),
+                       Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text('oportunuité 1' , style: GoogleFonts.openSans(
+                                  fontSize: 12.5, 
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.purple
+                                   ),),
+                        ),
+                      ),
+                        SizedBox(height: 10,),
+                       Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text('oportunuité 1' , style: GoogleFonts.openSans(
+                                  fontSize: 12.5, 
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.red
+                                   ),),
+                        ),
+                      ),
+                        SizedBox(height: 10,),
+                       Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text('oportunuité 1' , style: GoogleFonts.openSans(
+                                  fontSize: 12.5, 
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.black
+                                   ),),
+                        ),
+                      ),
                   ],
                 ),
               ),

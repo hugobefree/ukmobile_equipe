@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ukmoblie/acc%C3%A8sapli/pageacceuille.dart';
+import 'package:ukmoblie/mespages/support_page/contacter_support.dart';
 
 class Marketplace extends StatefulWidget {
   const Marketplace({super.key});
@@ -50,12 +51,94 @@ class _MarketplaceState extends State<Marketplace> {
               ),
             )),
       ),
-      body: Center(
-        child: Text('La marcket place sera bientot disponible ' , style: GoogleFonts.orbitron(
-          fontSize: 17, 
-          fontWeight: FontWeight.w600,
-          color: Colors.black87
-        ),),
+      body: Column(
+        children: [
+             SizedBox( height: 25,),
+
+                 Container(
+            width: 400,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 171, 72, 233),
+          borderRadius: BorderRadius.circular(10)
+        ),     
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Text(' Contacter le support pour exposer ses produit  ' , style: GoogleFonts.inter(
+                          fontSize: 10, 
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white
+                                ),),
+                        ),
+                        SizedBox( width: 25,),
+
+                             Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 7),
+                                child: GestureDetector(
+                              
+                                       onTap: () {
+
+             Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return Contacter_support();
+            }));
+                              
+                                   },
+                              
+                                      child: Container(
+                                        
+                                        decoration: BoxDecoration(
+                                          color: Color.fromARGB(255, 32, 216, 19),
+                                          borderRadius: BorderRadius.circular(9),
+                                        ),
+                                        
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 7),
+                                          child: Text(' En Clicquant ici' , style: GoogleFonts.openSans(
+                                                                fontSize: 10, 
+                                                                fontWeight: FontWeight.bold,
+                                                                color: Colors.white
+                                                                 ),),
+                                        ),
+                                      ),
+                                    ),
+                              ),
+                      ],
+                    ),
+                  ),
+                ),
+
+              //  SizedBox( height: 25,),
+
+              //    Container(
+              //      child: Padding(
+              //        padding: const EdgeInsets.all(15.0),
+                //      child: Image.asset(
+                  //      "image/.png",
+                    //  ),
+                    //),
+                  //),
+                  
+                SizedBox( height: 25,),
+
+          Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Text('Désormais il est possible d\'exposer ses produit de vente sur la Marcket Place ' , style: GoogleFonts.orbitron(
+                  fontSize: 12, 
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black87
+                ),),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

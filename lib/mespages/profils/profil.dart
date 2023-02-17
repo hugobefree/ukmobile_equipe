@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ukmoblie/acc%C3%A8sapli/pageacceuille.dart';
-import 'package:ukmoblie/mespages/profilclass.dart';
+import 'package:ukmoblie/mespages/profils/profilclass.dart';
 
 class Profileclass {
   final String Nom;
@@ -26,10 +26,7 @@ class Profileclass {
       Prennom: '',
       Annee: '',
       Faculte: '',
-      Departement: '',
-    );
-  }
-}
+      Departement: '',);}}
 
 
 class Profile_page extends StatefulWidget {
@@ -103,16 +100,14 @@ class _Profile_pageState extends State<Profile_page> {
                     style: GoogleFonts.orbitron(
                         fontSize: 11,
                         fontWeight: FontWeight.w800,
-                        color: Colors.black),
-                  ),
-                ],
-              ),
-            )),
+                        color: Colors.black),),],), )),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+
+          
           SizedBox(
             height: 5,
           ),
@@ -131,12 +126,7 @@ class _Profile_pageState extends State<Profile_page> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text('Profile'),
-                  ],
-                ),
-              ),
-            ),
-          ),
+                    Text('Profile'),],),),),),
           SizedBox(
             height: 25,
           ),
@@ -157,10 +147,7 @@ class _Profile_pageState extends State<Profile_page> {
                 Text('${_person.Nom}'  ,  style: GoogleFonts.openSans(
                         fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color: Colors.black),)
-              ],
-            ),
-          ),
+                        color: Colors.black),)],), ),
           SizedBox(
             height: 5,
           ),
@@ -180,10 +167,7 @@ class _Profile_pageState extends State<Profile_page> {
                 Text('${_person.Prennom}'  ,  style: GoogleFonts.openSans(
                         fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color: Colors.black),)
-              ],
-            ),
-          ),
+                        color: Colors.black),)],),),
           SizedBox(
             height: 5,
           ),
