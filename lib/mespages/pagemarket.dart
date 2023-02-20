@@ -77,7 +77,7 @@ class _MarketplaceState extends State<Marketplace> {
                           color: Colors.white
                                 ),),
                         ),
-                        SizedBox( width: 25,),
+                        SizedBox( width: 20,),
 
                              Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 7),
