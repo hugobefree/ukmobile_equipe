@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../accèsapli/pageacceuille.dart';
+import '../../color model/model_couleur.dart';
 
 class Cite_Page extends StatefulWidget {
   const Cite_Page({super.key});
@@ -14,7 +15,7 @@ class _Cite_PageState extends State<Cite_Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: Colors.white,
+       backgroundColor: darkMode?Colors.white :Colors.white,
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 32, 29, 190),
         leading: IconButton(
@@ -60,7 +61,7 @@ body: Column(
     Center(child: Text('Service non disponible pour l\'instant' ,  style: GoogleFonts.orbitron(
                         fontSize: 11,
                         fontWeight: FontWeight.w800,
-                        color: Colors.black),),)
+                        color: darkMode?Colors.white : Colors.black),),)
   ],
 ),
 

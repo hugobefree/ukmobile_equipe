@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../accèsapli/pageacceuille.dart';
+import '../../color model/model_couleur.dart';
 
 
 class Contacter_support extends StatefulWidget {
@@ -15,7 +16,7 @@ class _Contacter_supportState extends State<Contacter_support> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: Colors.white,
+       backgroundColor: darkMode?Colors.black :Colors.white,
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 32, 29, 190),
         leading: IconButton(

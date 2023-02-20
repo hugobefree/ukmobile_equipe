@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ukmoblie/acc%C3%A8sapli/pageacceuille.dart';
 import 'package:ukmoblie/mespages/profils/profilclass.dart';
 
+import '../../color model/model_couleur.dart';
+
 class Profileclass {
   final String Nom;
   final String Prennom;
@@ -69,7 +71,7 @@ class _Profile_pageState extends State<Profile_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: darkMode?Colors.black :Colors.white,
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 32, 29, 190),
         leading: IconButton(
@@ -127,7 +129,7 @@ class _Profile_pageState extends State<Profile_page> {
                       height: 10,
                     ),
                     Text('Profile'),],),),),),
-          SizedBox(
+        const  SizedBox(
             height: 25,
           ),
           Padding(
@@ -140,15 +142,15 @@ class _Profile_pageState extends State<Profile_page> {
                 Text('Nom:' ,  style: GoogleFonts.openSans(
                         fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color: Colors.black),),
-                SizedBox(
+                        color: darkMode?Colors.white :Colors.black),),
+              const  SizedBox(
                   width: 80,
                 ),
                 Text('${_person.Nom}'  ,  style: GoogleFonts.openSans(
                         fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color: Colors.black),)],), ),
-          SizedBox(
+                        color: darkMode?Colors.white :Colors.black),)],), ),
+          const SizedBox(
             height: 5,
           ),
           Padding(
@@ -160,15 +162,15 @@ class _Profile_pageState extends State<Profile_page> {
                 Text('Prénom:'  ,  style: GoogleFonts.openSans(
                         fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color: Colors.black),),
+                        color: darkMode?Colors.white :Colors.black),),
                 SizedBox(
                   width: 80,
                 ),
                 Text('${_person.Prennom}'  ,  style: GoogleFonts.openSans(
                         fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color: Colors.black),)],),),
-          SizedBox(
+                        color:darkMode?Colors.white : Colors.black),)],),),
+        const  SizedBox(
             height: 5,
           ),
           Padding(
@@ -180,18 +182,18 @@ class _Profile_pageState extends State<Profile_page> {
                 Text('Filière:'  ,  style: GoogleFonts.openSans(
                         fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color: Colors.black),),
-                SizedBox(
+                        color:darkMode?Colors.white : Colors.black),),
+                const SizedBox(
                   width: 80,
                 ),
                 Text('${_person.Faculte}'  ,  style: GoogleFonts.openSans(
                         fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color: Colors.black),)
+                        color: darkMode?Colors.white :Colors.black),)
               ],
             ),
           ),
-          SizedBox(
+        const  SizedBox(
             height: 5,
           ),
           Padding(
@@ -203,18 +205,18 @@ class _Profile_pageState extends State<Profile_page> {
                 Text('Département:'  ,  style: GoogleFonts.openSans(
                         fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color: Colors.black),),
+                        color: darkMode?Colors.white :Colors.black),),
                 SizedBox(
                   width: 80,
                 ),
                 Text('${_person.Departement}'  ,  style: GoogleFonts.openSans(
                         fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color: Colors.black),)
+                        color: darkMode?Colors.white :Colors.black),)
               ],
             ),
           ),
-          SizedBox(
+       const   SizedBox(
             height: 5,
           ),
           Padding(
@@ -286,7 +288,7 @@ class _Profile_pageState extends State<Profile_page> {
                                             TextStyle(color: Colors.white)),
                                   ),
                                 ),
-                                SizedBox(
+                              const  SizedBox(
                                   height: 10,
                                 ),
                                 Padding(
@@ -301,7 +303,7 @@ class _Profile_pageState extends State<Profile_page> {
                                         border: OutlineInputBorder(
                                             borderSide:
                                                 BorderSide(color: Colors.black)),
-                                        label: Text('prenom'),
+                                        label: Text('prenom' ),
                                         labelStyle:
                                             TextStyle(color: Colors.white)),
                                   ),
@@ -338,6 +340,8 @@ class _Profile_pageState extends State<Profile_page> {
                                             );
                                           }).toList(),
                                           onChanged: (String? newValue) {
+
+                                            // ici pour choisir la filière 
                                             setState(() {
                                               _Filierecelctione = newValue!;
                                               ContollerFiliere.text = newValue;
@@ -463,7 +467,7 @@ class _Profile_pageState extends State<Profile_page> {
                   );
                 });
           },
-          icon: Icon(Icons.edit)),
+          icon: Icon(Icons.edit , color: darkMode?Colors.white : Colors.black87)),
     );
   }
 }

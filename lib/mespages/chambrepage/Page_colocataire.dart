@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../accèsapli/pageacceuille.dart';
+import '../../color model/model_couleur.dart';
 
 class Colocataire_page extends StatefulWidget {
   const Colocataire_page({super.key});
@@ -14,7 +15,7 @@ class _Colocataire_pageState extends State<Colocataire_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: Colors.white,
+       backgroundColor: darkMode?Colors.black :Colors.white,
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 32, 29, 190),
         leading: IconButton(
@@ -64,7 +65,7 @@ SizedBox(
     Center(child: Text('Service non disponible pour l\'instant' ,  style: GoogleFonts.orbitron(
                         fontSize: 11,
                         fontWeight: FontWeight.w800,
-                        color: Colors.black),),)
+                        color: darkMode?Colors.white :Colors.black),),)
   ],
 ),
     );

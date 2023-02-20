@@ -6,6 +6,8 @@ import 'package:ukmoblie/mespages/chambrepage/Page_colocataire.dart';
 import 'package:ukmoblie/mespages/chambrepage/Page_horsuniversite.dart';
 import 'package:ukmoblie/mespages/support_page/contacter_support.dart';
 
+import '../../color model/model_couleur.dart';
+
 class Immobilier extends StatefulWidget {
   const Immobilier({super.key});
 
@@ -17,7 +19,7 @@ class _ImmobilierState extends State<Immobilier> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: Colors.white,
+       backgroundColor: darkMode?Colors.black : Colors.white,
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 32, 29, 190),
         leading: IconButton(

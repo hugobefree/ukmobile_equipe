@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ukmoblie/acc%C3%A8sapli/pageacceuille.dart';
 
+import '../color model/model_couleur.dart';
+
 class Eticket extends StatefulWidget {
   const Eticket({super.key});
 
@@ -13,7 +15,7 @@ class _EticketState extends State<Eticket> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: Colors.white,
+       backgroundColor:darkMode?Colors.black : Colors.white,
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 32, 29, 190),
         leading: IconButton(
@@ -54,7 +56,7 @@ class _EticketState extends State<Eticket> {
         child: Text('Les e-tickets ne sont pas encore diponible ' , style: GoogleFonts.orbitron(
           fontSize: 17, 
           fontWeight: FontWeight.w600,
-          color: Colors.black87
+          color:darkMode?Colors.white : Colors.black87
         ),),
       ),
     );

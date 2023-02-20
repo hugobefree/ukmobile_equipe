@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ukmoblie/acc%C3%A8sapli/pageacceuille.dart';
 import 'package:ukmoblie/mespages/support_page/contacter_support.dart';
 
+import '../color model/model_couleur.dart';
+
 class Marketplace extends StatefulWidget {
   const Marketplace({super.key});
 
@@ -14,7 +16,7 @@ class _MarketplaceState extends State<Marketplace> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: Colors.white,
+       backgroundColor:darkMode?Colors.black : Colors.white,
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 32, 29, 190),
         leading: IconButton(
@@ -133,7 +135,7 @@ class _MarketplaceState extends State<Marketplace> {
                 child: Text('Désormais il est possible d\'exposer ses produit de vente sur la Marcket Place ' , style: GoogleFonts.orbitron(
                   fontSize: 12, 
                   fontWeight: FontWeight.w600,
-                  color: Colors.black87
+                  color: darkMode?Colors.white : Colors.black87
                 ),),
               ),
             ),

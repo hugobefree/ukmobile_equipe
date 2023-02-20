@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ukmoblie/acc%C3%A8sapli/pageacceuille.dart';
 
+import '../../color model/model_couleur.dart';
+
 class PageprogrammeNord extends StatefulWidget {
   const PageprogrammeNord({super.key});
 
@@ -13,7 +15,7 @@ class _PageprogrammeNordState extends State<PageprogrammeNord> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: darkMode?Colors.black :Colors.white,
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 32, 29, 190),
         leading: IconButton(
@@ -52,7 +54,10 @@ class _PageprogrammeNordState extends State<PageprogrammeNord> {
       ),
       body: Column( mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(child: Text('Aucun programme pour l\instant ; veuillez actualiser' , )),
+          Center(child: Text('Aucun programme pour l\instant ; veuillez actualiser' , 
+          style: GoogleFonts.openSans(
+            color:darkMode?Colors.white : Colors.black
+          ),)),
 
           ]
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../accèsapli/pageacceuille.dart';
+import '../color model/model_couleur.dart';
 
 
 class Job_Page extends StatefulWidget {
@@ -15,7 +16,7 @@ class _Job_PageState extends State<Job_Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor:darkMode?Colors.black : Colors.white,
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 32, 29, 190),
         leading: IconButton(
@@ -82,7 +83,7 @@ class _Job_PageState extends State<Job_Page> {
                    style: GoogleFonts.inter(
                     fontSize: 15, 
                     fontWeight: FontWeight.w900,
-                    color: Colors.black
+                    color:darkMode?Colors.white : Colors.black
                           ),
                   ),
                 )

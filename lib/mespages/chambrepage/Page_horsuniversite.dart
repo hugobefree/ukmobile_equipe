@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../accèsapli/pageacceuille.dart';
+import '../../color model/model_couleur.dart';
 
 class Chambre_horsUnivPage extends StatefulWidget {
   const Chambre_horsUnivPage({super.key});
@@ -14,7 +15,7 @@ class _Chambre_horsUnivPageState extends State<Chambre_horsUnivPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: Colors.white,
+       backgroundColor: darkMode?Colors.black: Colors.white,
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 32, 29, 190),
         leading: IconButton(
@@ -60,7 +61,7 @@ body: Column(
     Center(child: Text('Service non disponible pour l\'instant' ,  style: GoogleFonts.orbitron(
                         fontSize: 11,
                         fontWeight: FontWeight.w800,
-                        color: Colors.black),),)
+                        color: darkMode?Colors.white :Colors.black),),)
   ],
 ),
     );
