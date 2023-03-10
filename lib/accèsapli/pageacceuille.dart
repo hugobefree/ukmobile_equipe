@@ -299,7 +299,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                },
                child: ListTile(
                  leading: const Icon(
-                   Icons.mood_sharp,
+                   Icons.mood,
                    color: Color.fromARGB(255, 20, 210, 26),
                  ),
                  title: Text(

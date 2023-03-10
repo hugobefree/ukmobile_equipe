@@ -49,78 +49,53 @@ class _HomepageState extends State<Homepage> {
               //
 
               SizedBox(height: 30,),
-              Text('Bienvenu à l\'université de Kara mobile' , style: GoogleFonts.openSans(
-                fontSize: 20,
-                fontWeight: FontWeight.w800,
-                color: Colors.black87
-              ) ,),SizedBox(height: 25,),
-              Text('Cette plate forme permet de mettre en relation tous les étudiants de l\'université de Kara' , 
-              style: GoogleFonts.openSans(
-                fontSize: 13,
+              Text('Bienvenu dans la plateforme ' , style: GoogleFonts.satisfy(
+                fontSize: 35,
                 fontWeight: FontWeight.w800,
                 color: Colors.black87
               ) ,),
+
+              SizedBox(height: 5,),
+
+               Text('qui crée un réseau d \' étudiants !' , style: GoogleFonts.satisfy(
+                fontSize: 28,
+                fontWeight: FontWeight.w700,
+                color: Colors.black87
+              ) ,)
+              ,SizedBox(height: 25,),
+
+              Text('Explorez, découvrez et connectez - vous , tout est ' , 
+              style: GoogleFonts.satisfy(
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
+                color: Colors.black87
+              ) ,),
               SizedBox(height: 06,),
-               Text(' Trouver des services de base  ' , 
-              style: GoogleFonts.inter(
-                fontSize: 13,
-                fontWeight: FontWeight.w800,
+               Text(' possible avec Campus Connet ' , 
+              style: GoogleFonts.satisfy(
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
                 color: Colors.black87
               ) ,), 
               ],
               ),
           ),
-           SizedBox(height: 30,),
+           SizedBox(height: 100,),
 
               GestureDetector(
                 onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return InscriptionPage();
-                  }));
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 33, 37, 243),
-                      borderRadius: BorderRadius.circular(10)
-                      ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                      child: Text('créer un compte' , style: GoogleFonts.inter(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white
-                        )),
-                    ),
-                  ),
-                ),
-              ),
-
-               SizedBox(height: 10,),
-
-              GestureDetector(
-                onTap: () {
-                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return COnnexion();
                   }));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(10)
-                      ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                      child: Text('Connexion' , style: GoogleFonts.inter(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white
-                        )),
-                    ),
-                  ),
+
+                  child: SizedBox(
+                    height: 60,
+                    width: 60,
+                    
+                    child: Image.asset("image/next.png")),
                 ),
               ),
         ],
