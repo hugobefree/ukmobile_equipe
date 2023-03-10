@@ -27,51 +27,71 @@ class _InscriptionPageState extends State<InscriptionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      backgroundColor: Colors.grey[100],
+
       body: SingleChildScrollView(
         child: Form(
           key: _formkey,
           child: Column(
             children: [
               const SizedBox(
-                height: 100,
+                height: 50,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                      height: 200,
-                      width: 200,
-                      child: SizedBox(child: Image.asset("image/uk.jpg"))),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Text(
-                    'Mobile',
-                    style: GoogleFonts.orbitron(
-                        fontSize: 35,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.black87),
-                  ),
-                ],
+               Text(
+                'Campus Connect',
+                style: GoogleFonts.oswald(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.black87),
               ),
-              Container(
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: TextFormField(
-                    validator: (value) => value!.isEmpty? 'Entrer votre email': null,
-                      onChanged: (value) => email = value,
-                    decoration: InputDecoration(
-                        hintText: 'email',
-                        hintStyle: GoogleFonts.orbitron(
-                            color: const Color.fromARGB(255, 12, 12, 12),
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold),
-                        enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black)),
-                        focusedBorder: const OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.black, width: 1.6))),
+              //Container(
+                
+            //      child: SizedBox(child: Image.asset("image/google.jpg"))),
+              const SizedBox(
+                width: 5,
+              ),
+                const SizedBox(
+                height: 15,
+              ),
+              Text(
+                'INCRIPTION',
+                style: GoogleFonts.openSans(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.black87),
+              ),
+
+               const SizedBox(
+                height: 15,
+              ),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 45 ),
+
+                child: Container(
+                
+                  color: Colors.white,
+
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 0 ),
+                    child: TextFormField(
+                      validator: (value) => value!.isEmpty? 'Entrer votre email': null,
+                        onChanged: (value) => email = value,
+                      decoration: InputDecoration(
+                          hintText: 'email',
+                      //    labelText: 'email',
+                       //   labelStyle: TextStyle(color: Colors.black),
+                          hintStyle: GoogleFonts.openSans(
+                              color: const Color.fromARGB(255, 12, 12, 12),
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold),
+                          enabledBorder: const OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black)),
+                          focusedBorder: const OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.black, width: 1.6))),
+                    ),
                   ),
                 ),
               ),
@@ -80,31 +100,36 @@ class _InscriptionPageState extends State<InscriptionPage> {
               ),
         
               //créer un préfixe qui soit déroulable pour choisir le pays
-              Container(
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Builder(
-                    builder: (BuildContext context) {
-                      return TextFormField(
-                        validator: (value) => value!.isEmpty? 'Entrer votre contact': null,
-                      onChanged: (value) => contact = value,
-                        decoration: InputDecoration(
-                          hintText: 'contact',
-                          hintStyle: GoogleFonts.orbitron(
-                              color: Color.fromARGB(255, 12, 12, 12),
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold),
-                          enabledBorder: const OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black)),
-                          focusedBorder: const OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.black, width: 1.6)),
-        
-                          //
-                        ),
-                      );
-                    },
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 45),
+                child: Container(
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 0),
+                    child: Builder(
+                      builder: (BuildContext context) {
+                        return TextFormField(
+                          validator: (value) => value!.isEmpty? 'Entrer votre contact': null,
+                        onChanged: (value) => contact = value,
+                          decoration: InputDecoration(
+                            hintText: 'contact',
+                         //   labelText: 'contact',
+                          //  labelStyle: TextStyle(color: Colors.black),
+                            hintStyle: GoogleFonts.openSans(
+                                color: Color.fromARGB(255, 12, 12, 12),
+                                fontSize: 10,
+                                fontWeight: FontWeight.bold),
+                            enabledBorder: const OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.black)),
+                            focusedBorder: const OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Colors.black, width: 1.6)),
+                      
+                            //
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
               ),
@@ -113,77 +138,105 @@ class _InscriptionPageState extends State<InscriptionPage> {
               const SizedBox(
                 height: 15,
               ),
-              Container(
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: TextFormField(
-                    obscureText: true,
-                    validator: (value) => value!.isEmpty? 'Entrer votre mot de passe': null,
-                      onChanged: (value) => mot_de_pass= value,
-                    decoration: InputDecoration(
-                        suffixIcon: const Icon(
-                          Icons.remove_red_eye,
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                        hintText: 'mot de passe',
-                        hintStyle: GoogleFonts.orbitron(
-                            color: Color.fromARGB(255, 12, 12, 12),
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold),
-                        enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black)),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.black, width: 1.6))),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 45),
+                child: Container(
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 0),
+                    child: TextFormField(
+                      obscureText: true,
+                      validator: (value) => value!.isEmpty? 'Entrer votre mot de passe': null,
+                        onChanged: (value) => mot_de_pass= value,
+                      decoration: InputDecoration(
+                          suffixIcon: const Icon(
+                            Icons.remove_red_eye,
+                            color: Colors.black,
+                            size: 10,
+                          ),
+                          hintText: 'mot de passe',
+                        //  labelText: 'mot de passe',
+                        //  labelStyle: TextStyle(color: Colors.black),
+                          hintStyle: GoogleFonts.openSans(
+                              color: Color.fromARGB(255, 12, 12, 12),
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold),
+                          enabledBorder: const OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black)),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.black, width: 1.6))),
+                    ),
                   ),
                 ),
               ),
               SizedBox(
                 height: 15,
               ),
-              Container(
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: TextFormField(
-                    obscureText: true,
-                    validator: (value) => confirmation_mot_de_pass!= mot_de_pass? ' mot de passe ne correspond pas': null,
-                      onChanged: (value) => confirmation_mot_de_pass = value,
-                    decoration: InputDecoration(
-                        suffixIcon: const Icon(
-                          Icons.remove_red_eye,
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                        hintText: 'confirmer le mot de passe',
-                        hintStyle: GoogleFonts.orbitron(
-                            color: Color.fromARGB(255, 12, 12, 12),
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold),
-                        enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black)),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.black, width: 1.6))),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'notre service nécessite le traitement de données personnelles (informations de contact).En continuant vous acceptez notre politique de confidentialité et nos conditions générales d\'utilisation.',
-                  style: GoogleFonts.openSans(
-                    color: Colors.black,
-                    fontSize: 12,
+                 padding: const EdgeInsets.symmetric(horizontal: 45),
+                child: Container(
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 0),
+                    child: TextFormField(
+                      obscureText: true,
+                      validator: (value) => confirmation_mot_de_pass!= mot_de_pass? ' mot de passe ne correspond pas': null,
+                        onChanged: (value) => confirmation_mot_de_pass = value,
+                      decoration: InputDecoration(
+                          suffixIcon: const Icon(
+                            Icons.remove_red_eye,
+                            color: Colors.black,
+                            size: 10,
+                          ),
+                          hintText: 'confirmer le mot de passe',
+                          //labelText: 'confirmer le mot de passe',
+                          //labelStyle: TextStyle(color: Colors.black),
+                          hintStyle: GoogleFonts.openSans(
+                              color: Color.fromARGB(255, 12, 12, 12),
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold),
+                          enabledBorder: const OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black)),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.black, width: 1.6))),
+                    ),
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(
+                height: 18,
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Divider(
+                    thickness: 15,
+                  ),
+                  Text('s\'inscrire autrement' ,style: TextStyle(color: Colors.black), ),
+
+                  Divider(
+                   thickness: 15,
+                 ),
+                ],
+              ),
+              const  SizedBox(height: 8),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 45),
+                child: Row(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(shape: BoxShape.circle),
+                      child: Image.asset("image/op.png"),
+                    )
+                  ],
+                ),
+              ),
+         
+             const  SizedBox(height: 30),
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -222,7 +275,7 @@ class _InscriptionPageState extends State<InscriptionPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(' j\'ai pas de compte ',
+                    Text(' j\'ai un compte ',
                         style: GoogleFonts.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
