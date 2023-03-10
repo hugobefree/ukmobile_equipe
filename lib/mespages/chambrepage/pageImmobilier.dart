@@ -19,7 +19,7 @@ class _ImmobilierState extends State<Immobilier> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: darkMode?Colors.black : Colors.white,
+       backgroundColor: darkMode?Colors.black : Colors.grey[100],
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 32, 29, 190),
         leading: IconButton(
@@ -68,7 +68,7 @@ class _ImmobilierState extends State<Immobilier> {
                   width: 350,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                    child: Text('les services disponible ici ne sont pas tous  gratuits   ' , style: GoogleFonts.inter(
+                    child: Text('les services disponible ici ne sont pas tous  gratuits   ' , style: GoogleFonts.openSans(
                     fontSize: 12, 
                     fontWeight: FontWeight.w900,
                     color: Colors.white
@@ -87,7 +87,7 @@ class _ImmobilierState extends State<Immobilier> {
                   width: 150,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                    child: Text('vous avez le choix entre un service universitaire  ' , style: GoogleFonts.inter(
+                    child: Text('vous avez le choix entre un service universitaire  ' , style: GoogleFonts.openSans(
                     fontSize: 12, 
                     fontWeight: FontWeight.w900,
                     color: Colors.white
@@ -102,7 +102,7 @@ class _ImmobilierState extends State<Immobilier> {
              width: 150,
              child: Padding(
                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-               child: Text('ou un service professionnel  ' , style: GoogleFonts.inter(
+               child: Text('ou un service professionnel  ' , style: GoogleFonts.openSans(
                     fontSize: 15, 
                     fontWeight: FontWeight.w900,
                     color: Colors.white
@@ -287,7 +287,7 @@ class _ImmobilierState extends State<Immobilier> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(12.0),
-                          child: Text(' Contacter le support pour assistance  ' , style: GoogleFonts.inter(
+                          child: Text(' Contacter le support pour assistance  ' , style: GoogleFonts.openSans(
                           fontSize: 12, 
                           fontWeight: FontWeight.w900,
                           color: Colors.white

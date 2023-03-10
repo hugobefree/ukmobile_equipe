@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 Color principal_color = Color.fromARGB(255, 20, 38, 238);
 Color second_color = Color.fromARGB(255, 66, 225, 26);
 Color white = Colors.white;
-Color grey = Colors.grey;
+Color gris = Color.fromARGB(255, 210, 209, 209).withOpacity(100);
 
 TextStyle style1 =
     GoogleFonts.openSans(fontWeight: FontWeight.w600, color: white);
@@ -17,3 +17,7 @@ TextStyle style3 = GoogleFonts.inter(fontWeight: FontWeight.w600, color: white);
 Color v = Colors.blue;
 
 bool darkMode = false;
+
+Color verte = Color(0xff23CC00);
+Color bleu = Color(0xff0083CC);
+Color jaune = Color(0xff23CC00);

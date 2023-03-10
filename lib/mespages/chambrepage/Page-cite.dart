@@ -15,7 +15,7 @@ class _Cite_PageState extends State<Cite_Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: darkMode?Colors.white :Colors.white,
+       backgroundColor: darkMode?Colors.white :Colors.grey[100],
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 32, 29, 190),
         leading: IconButton(
@@ -58,7 +58,7 @@ body: Column(
     SizedBox(
           height: 80,
                   ),
-    Center(child: Text('Service non disponible pour l\'instant' ,  style: GoogleFonts.orbitron(
+    Center(child: Text('Service non disponible pour l\'instant' ,  style: GoogleFonts.openSans(
                         fontSize: 11,
                         fontWeight: FontWeight.w800,
                         color: darkMode?Colors.white : Colors.black),),)

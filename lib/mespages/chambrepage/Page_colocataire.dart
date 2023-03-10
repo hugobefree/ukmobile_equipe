@@ -15,7 +15,7 @@ class _Colocataire_pageState extends State<Colocataire_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: darkMode?Colors.black :Colors.white,
+       backgroundColor: darkMode?Colors.black :Colors.grey[100],
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 32, 29, 190),
         leading: IconButton(
@@ -62,7 +62,7 @@ SizedBox(
           height: 80,
                   ),
 
-    Center(child: Text('Service non disponible pour l\'instant' ,  style: GoogleFonts.orbitron(
+    Center(child: Text('Service non disponible pour l\'instant' ,  style: GoogleFonts.openSans(
                         fontSize: 11,
                         fontWeight: FontWeight.w800,
                         color: darkMode?Colors.white :Colors.black),),)

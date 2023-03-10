@@ -15,7 +15,7 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return  Scaffold(
       
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[100],
       body: Column(
         
         children: [
@@ -49,7 +49,7 @@ class _HomepageState extends State<Homepage> {
               //
 
               SizedBox(height: 30,),
-              Text('Bienvenu à l\'université de Kara mobile' , style: GoogleFonts.inter(
+              Text('Bienvenu à l\'université de Kara mobile' , style: GoogleFonts.openSans(
                 fontSize: 20,
                 fontWeight: FontWeight.w800,
                 color: Colors.black87

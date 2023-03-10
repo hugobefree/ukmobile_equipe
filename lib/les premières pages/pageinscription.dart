@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ukmoblie/acc%C3%A8sapli/pageacceuille.dart';
+import 'package:ukmoblie/color%20model/model_couleur.dart';
 import 'package:ukmoblie/les%20premi%C3%A8res%20pages/pageconnexion.dart';
 
 class InscriptionPage extends StatefulWidget {
@@ -141,6 +142,7 @@ class _InscriptionPageState extends State<InscriptionPage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 45),
                 child: Container(
+                  
                   color: Colors.white,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 0),
@@ -206,33 +208,104 @@ class _InscriptionPageState extends State<InscriptionPage> {
                 ),
               ),
               const SizedBox(
-                height: 18,
+                height: 20,
               ),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Divider(
-                    thickness: 15,
-                  ),
-                  Text('s\'inscrire autrement' ,style: TextStyle(color: Colors.black), ),
-
-                  Divider(
-                   thickness: 15,
-                 ),
-                ],
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 85),
+                child: Divider(
+                  
+                ),
+                
               ),
-              const  SizedBox(height: 8),
+              Text('s\'inscrire autrement' ,style: TextStyle(color: Colors.black , fontWeight: FontWeight.bold),  ),
+
+             const Padding(
+               padding: EdgeInsets.symmetric(horizontal: 85),
+               child: Divider(
+                 
+                   ),
+             ),
+              const  SizedBox(height: 15),
+
+              //connexion avec les boutton google et facebook
+
+              //boutton google connect
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 45),
-                child: Row(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(shape: BoxShape.circle),
-                      child: Image.asset("image/op.png"),
-                    )
-                  ],
+                child: Container(
+                  alignment: Alignment.center,
+                  color: Colors.white,
+                  child: GestureDetector(
+                    onTap: () {
+                      
+                    },
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 31,
+                            height: 35,
+                            
+                           // decoration: BoxDecoration(shape: BoxShape.circle  , color: Colors.white),
+                            child: Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: Image.asset("image/google.png"),
+                            ),
+                          ),
+                          const SizedBox(width: 10,),
+                          Text('s\'inscrire avec mon compte google',
+                              style: GoogleFonts.openSans(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black)),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 10,),
+
+              // boutton facebook connect
+
+              
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 45),
+                child: Container(
+                  alignment: Alignment.center,
+                  color: Colors.white,
+                  child: GestureDetector(
+                    onTap: () {
+                      
+                    },
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 37,
+                            height: 35,
+                            
+                           // decoration: BoxDecoration(shape: BoxShape.circle  , color: Colors.white),
+                            child: Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: Image.asset("image/facebook.png"),
+                            ),
+                          ),
+                          const SizedBox(width: 10,),
+                          Text('s\'inscrire avec un compte facebook',
+                              style: GoogleFonts.openSans(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black)),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
               ),
          
@@ -251,14 +324,14 @@ class _InscriptionPageState extends State<InscriptionPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 33, 37, 243),
+                        color: principal_color,
                         borderRadius: BorderRadius.circular(10)),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 10),
                       child: Text('inscription',
-                          style: GoogleFonts.inter(
-                              fontSize: 20,
+                          style: GoogleFonts.openSans(
+                              fontSize: 17,
                               fontWeight: FontWeight.bold,
                               color: Colors.white)),
                     ),
@@ -276,8 +349,8 @@ class _InscriptionPageState extends State<InscriptionPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(' j\'ai un compte ',
-                        style: GoogleFonts.inter(
-                            fontSize: 12,
+                        style: GoogleFonts.openSans(
+                            fontSize: 11,
                             fontWeight: FontWeight.bold,
                             color: Colors.black)),
                     const SizedBox(
@@ -291,10 +364,10 @@ class _InscriptionPageState extends State<InscriptionPage> {
                         }));
                       },
                       child: Text('me connecter ici',
-                          style: GoogleFonts.inter(
-                              fontSize: 13.5,
+                          style: GoogleFonts.openSans(
+                              fontSize: 12.5,
                               fontWeight: FontWeight.bold,
-                              color: Colors.blue)),
+                              color: principal_color)),
                     ),
                   ],
                 ),

@@ -33,7 +33,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: darkMode? Colors.black : Colors.white,
+        backgroundColor: darkMode? Colors.black : Colors.grey[100],
         appBar: AppBar(
           backgroundColor: principal_color,
           centerTitle: true,

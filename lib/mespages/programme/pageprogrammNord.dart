@@ -15,7 +15,7 @@ class _PageprogrammeNordState extends State<PageprogrammeNord> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: darkMode?Colors.black :Colors.white,
+      backgroundColor: darkMode?Colors.black :Colors.grey[100],
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 32, 29, 190),
         leading: IconButton(
