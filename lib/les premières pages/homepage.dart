@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ukmoblie/les%20premi%C3%A8res%20pages/pageconnexion.dart';
 import 'package:ukmoblie/les%20premi%C3%A8res%20pages/pageinscription.dart';
 
+
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -17,39 +18,23 @@ class _HomepageState extends State<Homepage> {
       
       backgroundColor: Colors.grey[100],
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         
         children: [
           SizedBox(height: 50,),
 
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: 200,
-              width: 200,
-              child: SizedBox(child: Image.asset("image/uk.jpg"))),
-            SizedBox(width: 5,),
-             Text('Mobile' , style: GoogleFonts.orbitron(
-                fontSize: 35,
-                fontWeight: FontWeight.w800,
-                color: Colors.black87
-              ) ,),
-        
-        
-          ],
-        ),
+        Container(
+          height: 260,
+          width: 265,
+          child: SizedBox(child: Image.asset("image/p41.png"))),
 
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.symmetric(horizontal: 35),
             child: 
               Column(
                 children: [
-                  SizedBox(height: 30,),
-
-              //
-
-              SizedBox(height: 30,),
-              Text('Bienvenu dans la plateforme ' , style: GoogleFonts.satisfy(
+              SizedBox(height: 20,),
+              Text('Bienvenu sur la plateforme ' , style: GoogleFonts.satisfy(
                 fontSize: 35,
                 fontWeight: FontWeight.w800,
                 color: Colors.black87
@@ -66,14 +51,14 @@ class _HomepageState extends State<Homepage> {
 
               Text('Explorez, découvrez et connectez - vous , tout est ' , 
               style: GoogleFonts.satisfy(
-                fontSize: 22,
+                fontSize: 20,
                 fontWeight: FontWeight.w600,
                 color: Colors.black87
               ) ,),
               SizedBox(height: 06,),
                Text(' possible avec Campus Connet ' , 
               style: GoogleFonts.satisfy(
-                fontSize: 22,
+                fontSize: 20,
                 fontWeight: FontWeight.w600,
                 color: Colors.black87
               ) ,), 

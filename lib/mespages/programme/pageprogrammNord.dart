@@ -35,19 +35,10 @@ class _PageprogrammeNordState extends State<PageprogrammeNord> {
               child: Row(
                 children: [
                   Image.asset(
-                    "image/uk1.jpg",
+                    "image/p4112.png",
                     fit: BoxFit.cover,
                   ),
-                  SizedBox(
-                    width: 4,
-                  ),
-                  Text(
-                    'Mobile',
-                    style: GoogleFonts.orbitron(
-                        fontSize: 11,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.black),
-                  ),
+                 
                 ],
               ),
             )),

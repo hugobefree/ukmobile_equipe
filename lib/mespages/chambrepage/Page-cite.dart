@@ -15,7 +15,7 @@ class _Cite_PageState extends State<Cite_Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: darkMode?Colors.white :Colors.grey[100],
+       backgroundColor: darkMode?Colors.black: Colors.grey[100],
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 32, 29, 190),
         leading: IconButton(
@@ -35,19 +35,11 @@ class _Cite_PageState extends State<Cite_Page> {
               child: Row(
                 children: [
                   Image.asset(
-                    "image/uk1.jpg",
+                    "image/p4112.png",
                     fit: BoxFit.cover,
                   ),
-                  SizedBox(
-                    width: 4,
-                  ),
-                  Text(
-                    'Mobile',
-                    style: GoogleFonts.orbitron(
-                        fontSize: 11,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.black),
-                  ),
+                
+                 
                 ],
               ),
             )),

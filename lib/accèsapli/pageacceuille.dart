@@ -28,45 +28,40 @@ class Page_acceuille extends StatefulWidget {
 }
 
 class _Page_acceuilleState extends State<Page_acceuille> {
+  bool _iconbool = false;
+  IconData _iconlumiere = Icons.wb_sunny;
+  IconData _iconObscure = Icons.nights_stay;
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: darkMode? Colors.black : Colors.grey[100],
+        backgroundColor: darkMode ? Colors.black : Colors.grey[100],
         appBar: AppBar(
           backgroundColor: principal_color,
           centerTitle: true,
           elevation: 2,
-          title: Container(
-              width: 100,
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
-                child: Row(
-                  children: [
-                    Image.asset(
-                      "image/uk1.jpg",
-                      fit: BoxFit.cover,
-                    ),
-                    SizedBox(
-                      width: 4,
-                    ),
-                    Text(
-                      'Mobile',
-                      style: GoogleFonts.orbitron(
-                          fontSize: 11,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.black),
-                    ),
-                  ],
+          title: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            child: Container(
+                width: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                  color: Colors.white,
                 ),
-              )),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
+                  child: Image.asset(
+                    "image/p4112.png",
+                    fit: BoxFit.cover,
+                  ),
+                )),
+          ),
           actions: [
             Row(
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 15,
                 ),
                 GestureDetector(
@@ -90,7 +85,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
         ),
         drawer: Drawer(
           child: Container(
-            color: darkMode? Colors.black : Colors.white,
+            color: darkMode ? Colors.black : Colors.white,
             child: ListView(children: [
               DrawerHeader(
                   child: GestureDetector(
@@ -103,17 +98,21 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                      color: darkMode? Colors.white:principal_color,
+                      color: darkMode ? Colors.white : principal_color,
                       borderRadius: BorderRadius.circular(13)),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
-                      children:  [
+                      children: [
                         CircleAvatar(),
                         SizedBox(
                           height: 10,
                         ),
-                        Text('Profile',style: TextStyle(color: darkMode? Colors.black: Colors.white),)
+                        Text(
+                          'Profile',
+                          style: TextStyle(
+                              color: darkMode ? Colors.black : Colors.white),
+                        )
                       ],
                     ),
                   ),
@@ -135,9 +134,9 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                   title: Text(
                     'Profile',
                     style: GoogleFonts.openSans(
-                        fontSize: 18,
+                        fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color:darkMode? Colors.white: Colors.black),
+                        color: darkMode ? Colors.white : Colors.black),
                   ),
                 ),
               ),
@@ -158,9 +157,9 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                   title: Text(
                     'Trouver une chambre',
                     style: GoogleFonts.openSans(
-                        fontSize: 18,
+                        fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color:darkMode? Colors.white: Colors.black),
+                        color: darkMode ? Colors.white : Colors.black),
                   ),
                 ),
               ),
@@ -181,9 +180,9 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                   title: Text(
                     'Trouver un job',
                     style: GoogleFonts.openSans(
-                        fontSize: 18,
+                        fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color: darkMode? Colors.white:Colors.black),
+                        color: darkMode ? Colors.white : Colors.black),
                   ),
                 ),
               ),
@@ -204,9 +203,9 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                   title: Text(
                     'Market Place',
                     style: GoogleFonts.openSans(
-                        fontSize: 18,
+                        fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color: darkMode? Colors.white:Colors.black),
+                        color: darkMode ? Colors.white : Colors.black),
                   ),
                 ),
               ),
@@ -221,9 +220,9 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                 title: Text(
                   'visualiser les actualité',
                   style: GoogleFonts.openSans(
-                      fontSize: 18,
+                      fontSize: 13,
                       fontWeight: FontWeight.w800,
-                      color:darkMode? Colors.white: Colors.black),
+                      color: darkMode ? Colors.white : Colors.black),
                 ),
               ),
               const SizedBox(
@@ -241,9 +240,9 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                   title: Text(
                     'Rejoingnez la cummunoté ',
                     style: GoogleFonts.openSans(
-                        fontSize: 18,
+                        fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color:darkMode? Colors.white: Colors.black),
+                        color: darkMode ? Colors.white : Colors.black),
                   ),
                 ),
               ),
@@ -258,9 +257,9 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                 title: Text(
                   'A propos de nous',
                   style: GoogleFonts.openSans(
-                      fontSize: 18,
+                      fontSize: 13,
                       fontWeight: FontWeight.w800,
-                      color: darkMode? Colors.white:Colors.black),
+                      color: darkMode ? Colors.white : Colors.black),
                 ),
               ),
               const SizedBox(
@@ -281,58 +280,41 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                   title: Text(
                     'Aide',
                     style: GoogleFonts.openSans(
-                        fontSize: 18,
+                        fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color:darkMode? Colors.white: Colors.black),
+                        color: darkMode ? Colors.white : Colors.black),
                   ),
                 ),
               ),
               const SizedBox(
                 height: 6,
               ),
-              
-                  GestureDetector(
-               onTap: () {
-                 setState(() {
-                   darkMode = true;
-                 });
-               },
-               child: ListTile(
-                 leading: const Icon(
-                   Icons.mood,
-                   color: Color.fromARGB(255, 20, 210, 26),
-                 ),
-                 title: Text(
-                   'Darck thême ',
-                   style: GoogleFonts.openSans(
-                       fontSize: 18,
-                       fontWeight: FontWeight.w800,
-                       color:darkMode?Colors.white : Colors.black),
-                 ),
-               ),
-                  ),
 
-                  const SizedBox(height: 6,),
-                    GestureDetector(
-               onTap: () {
-                 setState(() {
-                   darkMode = false;
-                 });
-               },
-               child: ListTile(
-                 leading: const Icon(
-                   Icons.mood_sharp,
-                   color:  Color.fromARGB(255, 76, 57, 199),
-                 ),
-                 title: Text(
-                   'Light thême ',
-                   style: GoogleFonts.openSans(
-                       fontSize: 18,
-                       fontWeight: FontWeight.w800,
-                       color:darkMode?Colors.white : Colors.black),
-                 ),
-               ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    darkMode = !darkMode;
+                    _iconbool = !_iconbool;
+                  });
+                },
+                child: ListTile(
+                  leading: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          darkMode = !darkMode;
+                          _iconbool = !_iconbool;
+                        });
+                      },
+                      icon: Icon(_iconbool ? _iconObscure : _iconlumiere) , color: darkMode ?Colors.white : Color.fromARGB(255, 247, 188, 13),),
+                  title: Text(
+                    'Darck thême ',
+                    style: GoogleFonts.openSans(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w800,
+                        color: darkMode ? Colors.white : Color.fromARGB(255, 18, 18, 17)),
                   ),
+                ),
+              )
             ]),
           ),
         ),
@@ -476,7 +458,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                   style: GoogleFonts.openSans(
                       fontSize: 13.3,
                       fontWeight: FontWeight.w800,
-                      color: darkMode? Colors.white :Colors.black),
+                      color: darkMode ? Colors.white : Colors.black),
                 ),
                 const SizedBox(
                   width: 5,
@@ -488,7 +470,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                     style: GoogleFonts.openSans(
                         fontSize: 13.3,
                         fontWeight: FontWeight.w800,
-                        color:darkMode? Colors.white : Colors.black),
+                        color: darkMode ? Colors.white : Colors.black),
                   ),
                 ),
               ],
@@ -514,7 +496,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 5, vertical: 5),
                       child: Image.asset(
-                        "image/banier.png",
+                        "image/p41.png",
                       ),
                     ),
                   ),
@@ -526,13 +508,13 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                     width: 350,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(17),
-                      color: Colors.yellow,
+                      color: Color.fromARGB(255, 245, 244, 241),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 5, vertical: 5),
                       child: Image.asset(
-                        "image/banier.png",
+                        "image/p41.png",
                       ),
                     ),
                   ),
@@ -554,7 +536,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                   style: GoogleFonts.openSans(
                       fontSize: 13.3,
                       fontWeight: FontWeight.w800,
-                      color:darkMode? Colors.white: Colors.black),
+                      color: darkMode ? Colors.white : Colors.black),
                 ),
               ),
             ),
@@ -733,18 +715,17 @@ class _Page_acceuilleState extends State<Page_acceuille> {
         ),
         floatingActionButton: AnimatedContainer(
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(11)),
-          duration: Duration(milliseconds: 600),
+          duration: const Duration(milliseconds: 600),
           child: Container(
             decoration: BoxDecoration(
-              color:darkMode?Colors.blue : second_color,
-              borderRadius: BorderRadius.circular(8.9)
-
-            ),
-            
+                color: darkMode ? Colors.blue : second_color,
+                borderRadius: BorderRadius.circular(8.9)),
             child: IconButton(
               icon: Icon(
                 Icons.calendar_today,
-                color:darkMode? principal_color : Color.fromARGB(255, 12, 12, 12),
+                color: darkMode
+                    ? principal_color
+                    : Color.fromARGB(255, 12, 12, 12),
               ),
               onPressed: () {
                 showDialog(
@@ -754,7 +735,9 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                         child: Container(
                           height: 200,
                           width: 150,
-                          color: darkMode? Colors.grey :Color.fromARGB(255, 235, 234, 237),
+                          color: darkMode
+                              ? Colors.grey
+                              : Color.fromARGB(255, 235, 234, 237),
                           child: Column(
                             children: [
                               SizedBox(
@@ -793,7 +776,8 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                                     child: Container(
                                       alignment: Alignment.center,
                                       decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(7),
+                                          borderRadius:
+                                              BorderRadius.circular(7),
                                           color:
                                               Color.fromARGB(255, 26, 184, 31)),
                                       child: Padding(
@@ -835,7 +819,8 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                                     child: Container(
                                       alignment: Alignment.center,
                                       decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(7),
+                                          borderRadius:
+                                              BorderRadius.circular(7),
                                           color:
                                               Color.fromARGB(255, 26, 184, 31)),
                                       child: Padding(

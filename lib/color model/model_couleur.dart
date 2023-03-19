@@ -18,6 +18,10 @@ Color v = Colors.blue;
 
 bool darkMode = false;
 
+bool _iconbool = false;
+IconData _iconlumiere = Icons.wb_sunny;
+IconData _iconObscure = Icons.nights_stay;
+
 Color verte = Color(0xff23CC00);
 Color bleu = Color(0xff0083CC);
 Color jaune = Color(0xff23CC00);

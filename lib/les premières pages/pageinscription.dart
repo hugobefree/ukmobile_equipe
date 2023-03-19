@@ -41,17 +41,10 @@ class _InscriptionPageState extends State<InscriptionPage> {
                 const SizedBox(
                   height: 15,
                 ),
-                 Text(
-                  'Campus Connect',
-                  style: GoogleFonts.oswald(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w800,
-                      color: Colors.black87),
-                ),
-                  const SizedBox(
-                  height: 10,
-                ),
-        
+                Container(
+          height: 120,
+          width: 265,
+          child: SizedBox(child: Image.asset("image/p41.png"))),
                     SizedBox(
                               width: 31,
                               height: 35,

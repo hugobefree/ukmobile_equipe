@@ -36,18 +36,8 @@ class _MarketplaceState extends State<Marketplace> {
               child: Row(
                 children: [
                   Image.asset(
-                    "image/uk1.jpg",
+                   "image/p4112.png",
                     fit: BoxFit.cover,
-                  ),
-                  SizedBox(
-                    width: 4,
-                  ),
-                  Text(
-                    'Mobile',
-                    style: GoogleFonts.orbitron(
-                        fontSize: 11,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.black),
                   ),
                 ],
               ),
@@ -70,17 +60,17 @@ class _MarketplaceState extends State<Marketplace> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.all(10.0),
                           child: Text(' Contacter le support pour exposer ses produit  ' , style: GoogleFonts.inter(
                           fontSize: 10, 
                           fontWeight: FontWeight.w900,
                           color: Colors.white
                                 ),),
                         ),
-                        SizedBox( width: 20,),
+                        SizedBox( width: 6,),
 
                              Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 7),
+                                padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                                 child: GestureDetector(
                               
                                        onTap: () {
@@ -99,7 +89,7 @@ class _MarketplaceState extends State<Marketplace> {
                                         ),
                                         
                                         child: Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 7),
+                                          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                                           child: Text(' En Clicquant ici' , style: GoogleFonts.openSans(
                                                                 fontSize: 10, 
                                                                 fontWeight: FontWeight.bold,
