@@ -1,7 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:ukmoblie/color%20model/model_couleur.dart';
+import 'package:ukmoblie/les%20premi%C3%A8res%20pages/pageconnexion.dart';
 import 'package:ukmoblie/mespages/Eticketpage.dart';
 import 'package:ukmoblie/mespages/chambrepage/pageImmobilier.dart';
 import 'package:ukmoblie/mespages/pagejob.dart';
@@ -10,6 +13,8 @@ import 'package:ukmoblie/mespages/profils/profil.dart';
 import 'package:ukmoblie/mespages/programme/pageprogrammNord.dart';
 import 'package:ukmoblie/mespages/programme/programmeSud.dart';
 import 'package:ukmoblie/mespages/support_page/contacter_support.dart';
+
+import '../main.dart';
 
 class telegrambutton {
   final String CanalName;
@@ -226,7 +231,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 6,
               ),
 
               // ici j'ai créé un boutton pour rejoindre un canal télégram qui sera le notre
@@ -299,22 +304,54 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                 },
                 child: ListTile(
                   leading: IconButton(
-                      onPressed: () {
-                        setState(() {
-                          darkMode = !darkMode;
-                          _iconbool = !_iconbool;
-                        });
-                      },
-                      icon: Icon(_iconbool ? _iconObscure : _iconlumiere) , color: darkMode ?Colors.white : Color.fromARGB(255, 247, 188, 13),),
+                    onPressed: () {
+                      setState(() {
+                        darkMode = !darkMode;
+                        _iconbool = !_iconbool;
+                      });
+                    },
+                    icon: Icon(_iconbool ? _iconObscure : _iconlumiere),
+                    color: darkMode
+                        ? Colors.white
+                        : Color.fromARGB(255, 247, 188, 13),
+                  ),
                   title: Text(
                     'Darck thême ',
                     style: GoogleFonts.openSans(
                         fontSize: 13,
                         fontWeight: FontWeight.w800,
-                        color: darkMode ? Colors.white : Color.fromARGB(255, 18, 18, 17)),
+                        color: darkMode
+                            ? Colors.white
+                            : Color.fromARGB(255, 18, 18, 17)),
                   ),
                 ),
-              )
+              ),
+              GestureDetector(
+                onTap: () async {
+                  FirebaseAuth.instance.signOut().then((value) {
+                      Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const COnnexion();
+                        }));
+                  });
+                },
+                child: ListTile(
+                  leading: const Icon(
+                    Icons.logout,
+                    color: Color.fromARGB(255, 32, 205, 38),
+                  ),
+                  title: Text(
+                    'Déconecter',
+                    style: GoogleFonts.openSans(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w800,
+                        color: darkMode ? Colors.white : Colors.black),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 6,
+              ),
             ]),
           ),
         ),

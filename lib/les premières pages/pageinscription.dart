@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ukmoblie/acc%C3%A8sapli/pageacceuille.dart';
 import 'package:ukmoblie/color%20model/model_couleur.dart';
 import 'package:ukmoblie/les%20premi%C3%A8res%20pages/pageconnexion.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class InscriptionPage extends StatefulWidget {
   const InscriptionPage({
@@ -14,6 +16,7 @@ class InscriptionPage extends StatefulWidget {
 }
 
 class _InscriptionPageState extends State<InscriptionPage> {
+  /* ici on va déclarer les instance utilisateur de firebase */
 
   // je crée ici des variable que je vais utiliser dans mes textformfield
 
@@ -21,16 +24,20 @@ class _InscriptionPageState extends State<InscriptionPage> {
   String contact = '';
   String email = '';
   String mot_de_pass = '';
-  String  confirmation_mot_de_pass = '';
+  String confirmation_mot_de_pass = '';
+
+  /** ici j'ai créer les contoller pur mes chant de texte */
+
+  TextEditingController _emailcontroller = TextEditingController();
+  TextEditingController _pwrdcontroller = TextEditingController();
+
 
   final _formkey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       backgroundColor: Colors.grey[100],
-
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -42,24 +49,24 @@ class _InscriptionPageState extends State<InscriptionPage> {
                   height: 15,
                 ),
                 Container(
-          height: 120,
-          width: 265,
-          child: SizedBox(child: Image.asset("image/p41.png"))),
-                    SizedBox(
-                              width: 31,
-                              height: 35,
-                              
-                             // decoration: BoxDecoration(shape: BoxShape.circle  , color: Colors.white),
-                              child: Padding(
-                                padding: const EdgeInsets.all(2.0),
-                                child: Image.asset("image/user.png"),
-                              ),
-                            ),
+                    height: 120,
+                    width: 265,
+                    child: SizedBox(child: Image.asset("image/p41.png"))),
+                SizedBox(
+                  width: 31,
+                  height: 35,
+
+                  // decoration: BoxDecoration(shape: BoxShape.circle  , color: Colors.white),
+                  child: Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Image.asset("image/user.png"),
+                  ),
+                ),
                 //Container(
-                  
-              //      child: SizedBox(child: Image.asset("image/google.jpg"))),
-              
-                  const SizedBox(
+
+                //      child: SizedBox(child: Image.asset("image/google.jpg"))),
+
+                const SizedBox(
                   height: 15,
                 ),
                 Text(
@@ -69,27 +76,26 @@ class _InscriptionPageState extends State<InscriptionPage> {
                       fontWeight: FontWeight.w800,
                       color: Colors.black87),
                 ),
-        
-                 const SizedBox(
+
+                const SizedBox(
                   height: 15,
                 ),
-        
+
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 45 ),
-        
+                  padding: const EdgeInsets.symmetric(horizontal: 45),
                   child: Container(
-                  
                     color: Colors.white,
-        
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 0 ),
+                      padding: const EdgeInsets.symmetric(horizontal: 0),
                       child: TextFormField(
-                        validator: (value) => value!.isEmpty? 'Entrer votre email': null,
-                          onChanged: (value) => email = value,
+                        controller: _emailcontroller,
+                        validator: (value) =>
+                            value!.isEmpty ? 'Entrer votre email' : null,
+                        onChanged: (value) => email = value,
                         decoration: InputDecoration(
                             hintText: 'email',
-                        //    labelText: 'email',
-                         //   labelStyle: TextStyle(color: Colors.black),
+                            //    labelText: 'email',
+                            //   labelStyle: TextStyle(color: Colors.black),
                             hintStyle: GoogleFonts.openSans(
                                 color: const Color.fromARGB(255, 12, 12, 12),
                                 fontSize: 10,
@@ -97,8 +103,8 @@ class _InscriptionPageState extends State<InscriptionPage> {
                             enabledBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.black)),
                             focusedBorder: const OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.black, width: 1.6))),
+                                borderSide: BorderSide(
+                                    color: Colors.black, width: 1.6))),
                       ),
                     ),
                   ),
@@ -106,7 +112,7 @@ class _InscriptionPageState extends State<InscriptionPage> {
                 const SizedBox(
                   height: 15,
                 ),
-          
+
                 //créer un préfixe qui soit déroulable pour choisir le pays
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 45),
@@ -117,12 +123,14 @@ class _InscriptionPageState extends State<InscriptionPage> {
                       child: Builder(
                         builder: (BuildContext context) {
                           return TextFormField(
-                            validator: (value) => value!.isEmpty? 'Entrer votre contact': null,
-                          onChanged: (value) => contact = value,
+                            controller: _pwrdcontroller ,
+                            validator: (value) =>
+                                value!.isEmpty ? 'Entrer votre contact' : null,
+                            onChanged: (value) => contact = value,
                             decoration: InputDecoration(
                               hintText: 'contact',
-                           //   labelText: 'contact',
-                            //  labelStyle: TextStyle(color: Colors.black),
+                              //   labelText: 'contact',
+                              //  labelStyle: TextStyle(color: Colors.black),
                               hintStyle: GoogleFonts.openSans(
                                   color: Color.fromARGB(255, 12, 12, 12),
                                   fontSize: 10,
@@ -130,9 +138,9 @@ class _InscriptionPageState extends State<InscriptionPage> {
                               enabledBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.black)),
                               focusedBorder: const OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Colors.black, width: 1.6)),
-                        
+                                  borderSide: BorderSide(
+                                      color: Colors.black, width: 1.6)),
+
                               //
                             ),
                           );
@@ -141,22 +149,22 @@ class _InscriptionPageState extends State<InscriptionPage> {
                     ),
                   ),
                 ),
-          // c'est pour créer un textfiel pour les contact de pays
-          
+                // c'est pour créer un textfiel pour les contact de pays
+
                 const SizedBox(
                   height: 15,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 45),
                   child: Container(
-                    
                     color: Colors.white,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 0),
                       child: TextFormField(
                         obscureText: true,
-                        validator: (value) => value!.isEmpty? 'Entrer votre mot de passe': null,
-                          onChanged: (value) => mot_de_pass= value,
+                        validator: (value) =>
+                            value!.isEmpty ? 'Entrer votre mot de passe' : null,
+                        onChanged: (value) => mot_de_pass = value,
                         decoration: InputDecoration(
                             suffixIcon: const Icon(
                               Icons.remove_red_eye,
@@ -164,8 +172,8 @@ class _InscriptionPageState extends State<InscriptionPage> {
                               size: 10,
                             ),
                             hintText: 'mot de passe',
-                          //  labelText: 'mot de passe',
-                          //  labelStyle: TextStyle(color: Colors.black),
+                            //  labelText: 'mot de passe',
+                            //  labelStyle: TextStyle(color: Colors.black),
                             hintStyle: GoogleFonts.openSans(
                                 color: Color.fromARGB(255, 12, 12, 12),
                                 fontSize: 10,
@@ -173,8 +181,8 @@ class _InscriptionPageState extends State<InscriptionPage> {
                             enabledBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.black)),
                             focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.black, width: 1.6))),
+                                borderSide: BorderSide(
+                                    color: Colors.black, width: 1.6))),
                       ),
                     ),
                   ),
@@ -183,15 +191,18 @@ class _InscriptionPageState extends State<InscriptionPage> {
                   height: 15,
                 ),
                 Padding(
-                   padding: const EdgeInsets.symmetric(horizontal: 45),
+                  padding: const EdgeInsets.symmetric(horizontal: 45),
                   child: Container(
                     color: Colors.white,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 0),
                       child: TextFormField(
                         obscureText: true,
-                        validator: (value) => confirmation_mot_de_pass!= mot_de_pass? ' mot de passe ne correspond pas': null,
-                          onChanged: (value) => confirmation_mot_de_pass = value,
+                        validator: (value) =>
+                            confirmation_mot_de_pass != mot_de_pass
+                                ? ' mot de passe ne correspond pas'
+                                : null,
+                        onChanged: (value) => confirmation_mot_de_pass = value,
                         decoration: InputDecoration(
                             suffixIcon: const Icon(
                               Icons.remove_red_eye,
@@ -208,8 +219,8 @@ class _InscriptionPageState extends State<InscriptionPage> {
                             enabledBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.black)),
                             focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.black, width: 1.6))),
+                                borderSide: BorderSide(
+                                    color: Colors.black, width: 1.6))),
                       ),
                     ),
                   ),
@@ -217,15 +228,24 @@ class _InscriptionPageState extends State<InscriptionPage> {
                 const SizedBox(
                   height: 20,
                 ),
-                  GestureDetector(
+                GestureDetector(
                   onTap: () {
                     setState(() {
-                      if(_formkey.currentState!.validate()){
-                       Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return const Page_acceuille();
-                    }));
-                    };
-                  });
+                      /* ici on va créer la syntaxe d'authentification firebase pour l'inscription */
+
+                      if (_formkey.currentState!.validate()) {
+                         FirebaseAuth.instance.createUserWithEmailAndPassword(
+                          email: _emailcontroller.text,
+                           password: _pwrdcontroller.text).then((value) {
+                              Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const Page_acceuille();
+                        }));
+                          });
+                      
+                      }
+                      ;
+                    });
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -245,40 +265,37 @@ class _InscriptionPageState extends State<InscriptionPage> {
                     ),
                   ),
                 ),
-                  const SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-        
+
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 85),
-                  child: Divider(
-                    
-                  ),
-                  
+                  child: Divider(),
                 ),
-                Text('s\'inscrire autrement' ,style: TextStyle(color: Colors.black , fontWeight: FontWeight.bold),  ),
-        
-               const Padding(
-                 padding: EdgeInsets.symmetric(horizontal: 85),
-                 child: Divider(
-                   
-                     ),
-               ),
-                const  SizedBox(height: 15),
-        
+                Text(
+                  's\'inscrire autrement',
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                ),
+
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 85),
+                  child: Divider(),
+                ),
+                const SizedBox(height: 15),
+
                 //connexion avec les boutton google et facebook
-        
+
                 //boutton google connect
-        
+
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 45),
                   child: Container(
                     alignment: Alignment.center,
                     color: Colors.white,
                     child: GestureDetector(
-                      onTap: () {
-                        
-                      },
+                      onTap: () {},
                       child: Center(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -286,14 +303,16 @@ class _InscriptionPageState extends State<InscriptionPage> {
                             SizedBox(
                               width: 31,
                               height: 35,
-                              
-                             // decoration: BoxDecoration(shape: BoxShape.circle  , color: Colors.white),
+
+                              // decoration: BoxDecoration(shape: BoxShape.circle  , color: Colors.white),
                               child: Padding(
                                 padding: const EdgeInsets.all(2.0),
                                 child: Image.asset("image/google.png"),
                               ),
                             ),
-                            const SizedBox(width: 10,),
+                            const SizedBox(
+                              width: 10,
+                            ),
                             Text('s\'inscrire avec mon compte google',
                                 style: GoogleFonts.openSans(
                                     fontSize: 10,
@@ -305,21 +324,20 @@ class _InscriptionPageState extends State<InscriptionPage> {
                     ),
                   ),
                 ),
-        
-                const SizedBox(height: 10,),
-        
+
+                const SizedBox(
+                  height: 10,
+                ),
+
                 // boutton facebook connect
-        
-                
+
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 45),
                   child: Container(
                     alignment: Alignment.center,
                     color: Colors.white,
                     child: GestureDetector(
-                      onTap: () {
-                        
-                      },
+                      onTap: () {},
                       child: Center(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -327,14 +345,16 @@ class _InscriptionPageState extends State<InscriptionPage> {
                             SizedBox(
                               width: 37,
                               height: 35,
-                              
-                             // decoration: BoxDecoration(shape: BoxShape.circle  , color: Colors.white),
+
+                              // decoration: BoxDecoration(shape: BoxShape.circle  , color: Colors.white),
                               child: Padding(
                                 padding: const EdgeInsets.all(2.0),
                                 child: Image.asset("image/facebook.png"),
                               ),
                             ),
-                            const SizedBox(width: 10,),
+                            const SizedBox(
+                              width: 10,
+                            ),
                             Text('s\'inscrire avec un compte facebook',
                                 style: GoogleFonts.openSans(
                                     fontSize: 10,
@@ -346,9 +366,9 @@ class _InscriptionPageState extends State<InscriptionPage> {
                     ),
                   ),
                 ),
-           
-               const  SizedBox(height: 10),
-               
+
+                const SizedBox(height: 10),
+
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
