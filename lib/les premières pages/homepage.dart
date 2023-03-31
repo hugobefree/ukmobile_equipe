@@ -34,16 +34,16 @@ class _HomepageState extends State<Homepage> {
               Column(
                 children: [
               SizedBox(height: 20,),
-              Text('Bienvenu sur la plateforme ' , style: GoogleFonts.satisfy(
-                fontSize: 35,
+              Text('Bienvenu sur la plateforme ' , style: GoogleFonts.poppins(
+                fontSize: 23,
                 fontWeight: FontWeight.w800,
                 color: Colors.black87
               ) ,),
 
               SizedBox(height: 5,),
 
-               Text('qui crée un réseau d \' étudiants !' , style: GoogleFonts.satisfy(
-                fontSize: 28,
+               Text('qui crée un réseau d \' étudiants !' , style: GoogleFonts.poppins(
+                fontSize: 18,
                 fontWeight: FontWeight.w700,
                 color: Colors.black87
               ) ,)
@@ -51,14 +51,14 @@ class _HomepageState extends State<Homepage> {
 
               Text('Explorez, découvrez et connectez - vous , tout est ' , 
               style: GoogleFonts.satisfy(
-                fontSize: 20,
+                fontSize: 17,
                 fontWeight: FontWeight.w600,
                 color: Colors.black87
               ) ,),
               SizedBox(height: 06,),
-               Text(' possible avec Campus Connet ' , 
+               Text(' possible avec Campus Connect ' , 
               style: GoogleFonts.satisfy(
-                fontSize: 20,
+                fontSize: 19,
                 fontWeight: FontWeight.w600,
                 color: Colors.black87
               ) ,), 

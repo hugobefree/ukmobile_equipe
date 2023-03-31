@@ -49,7 +49,7 @@ class _InscriptionPageState extends State<InscriptionPage> {
                   height: 15,
                 ),
                 Container(
-                    height: 120,
+                    height: 130,
                     width: 265,
                     child: SizedBox(child: Image.asset("image/p41.png"))),
                 SizedBox(
@@ -123,10 +123,6 @@ class _InscriptionPageState extends State<InscriptionPage> {
                       child: Builder(
                         builder: (BuildContext context) {
                           return TextFormField(
-                            controller: _pwrdcontroller ,
-                            validator: (value) =>
-                                value!.isEmpty ? 'Entrer votre contact' : null,
-                            onChanged: (value) => contact = value,
                             decoration: InputDecoration(
                               hintText: 'contact',
                               //   labelText: 'contact',
@@ -161,6 +157,7 @@ class _InscriptionPageState extends State<InscriptionPage> {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 0),
                       child: TextFormField(
+                        controller: _pwrdcontroller,
                         obscureText: true,
                         validator: (value) =>
                             value!.isEmpty ? 'Entrer votre mot de passe' : null,
@@ -197,6 +194,7 @@ class _InscriptionPageState extends State<InscriptionPage> {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 0),
                       child: TextFormField(
+                        
                         obscureText: true,
                         validator: (value) =>
                             confirmation_mot_de_pass != mot_de_pass

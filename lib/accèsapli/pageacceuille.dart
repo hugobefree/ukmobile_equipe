@@ -114,7 +114,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                           height: 10,
                         ),
                         Text(
-                          'Profile',
+                          'Profil',
                           style: TextStyle(
                               color: darkMode ? Colors.black : Colors.white),
                         )
@@ -131,17 +131,30 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                     );
                   }));
                 },
-                child: ListTile(
-                  leading: Icon(
-                    Icons.person,
-                    color: second_color,
-                  ),
-                  title: Text(
-                    'Profile',
-                    style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: darkMode ? Colors.white : Colors.black),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Container(
+                    
+                   decoration: BoxDecoration(
+                    gradient: LinearGradient(begin: Alignment.topCenter,
+                    end:Alignment.bottomCenter,
+                    colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                     darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                     ),
+                            borderRadius: BorderRadius.circular(10)),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.person,
+                        color: second_color,
+                      ),
+                      title: Text(
+                        'Profil',
+                        style: GoogleFonts.openSans(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w800,
+                            color: darkMode ? Colors.white : Colors.black),
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -154,17 +167,29 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                     return Immobilier();
                   }));
                 },
-                child: ListTile(
-                  leading: const Icon(
-                    Icons.home,
-                    color: Color.fromARGB(255, 205, 202, 32),
-                  ),
-                  title: Text(
-                    'Trouver une chambre',
-                    style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: darkMode ? Colors.white : Colors.black),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              borderRadius: BorderRadius.circular(10)),
+                    child: ListTile(
+                      leading:  Icon(
+                        Icons.home,
+                        color: Color.fromARGB(255, 205, 202, 32),
+                      ),
+                      title: Text(
+                        'Visualiser une chambre',
+                        style: GoogleFonts.openSans(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w800,
+                            color: darkMode ? Colors.white : Colors.black),
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -177,17 +202,28 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                     return Job_Page();
                   }));
                 },
-                child: ListTile(
-                  leading: Icon(
-                    Icons.work,
-                    color: Color.fromARGB(255, 32, 58, 205),
-                  ),
-                  title: Text(
-                    'Trouver un job',
-                    style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: darkMode ? Colors.white : Colors.black),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Container(decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              borderRadius: BorderRadius.circular(10)),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.work,
+                        color: Color.fromARGB(255, 32, 58, 205),
+                      ),
+                      title: Text(
+                        'Trouver un job',
+                        style: GoogleFonts.openSans(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w800,
+                            color: darkMode ? Colors.white : Colors.black),
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -200,34 +236,56 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                     return Marketplace();
                   }));
                 },
-                child: ListTile(
-                  leading: Icon(
-                    Icons.store,
-                    color: Color.fromARGB(255, 32, 205, 38),
-                  ),
-                  title: Text(
-                    'Market Place',
-                    style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: darkMode ? Colors.white : Colors.black),
+                child: Padding(
+                 padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Container(decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              borderRadius: BorderRadius.circular(10)),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.store,
+                        color: Color.fromARGB(255, 32, 205, 38),
+                      ),
+                      title: Text(
+                        'Market Place',
+                        style: GoogleFonts.openSans(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w800,
+                            color: darkMode ? Colors.white : Colors.black),
+                      ),
+                    ),
                   ),
                 ),
               ),
               const SizedBox(
                 height: 6,
               ),
-              ListTile(
-                leading: Icon(
-                  Icons.tv,
-                  color: Color.fromARGB(255, 32, 38, 205),
-                ),
-                title: Text(
-                  'visualiser les actualité',
-                  style: GoogleFonts.openSans(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w800,
-                      color: darkMode ? Colors.white : Colors.black),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Container(decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              borderRadius: BorderRadius.circular(10)),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.tv,
+                      color: Color.fromARGB(255, 32, 38, 205),
+                    ),
+                    title: Text(
+                      'visualiser les actualités',
+                      style: GoogleFonts.openSans(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: darkMode ? Colors.white : Colors.black),
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -237,34 +295,56 @@ class _Page_acceuilleState extends State<Page_acceuille> {
               // ici j'ai créé un boutton pour rejoindre un canal télégram qui sera le notre
               GestureDetector(
                 onTap: () {},
-                child: ListTile(
-                  leading: const Icon(
-                    Icons.telegram,
-                    color: Color.fromARGB(255, 32, 205, 38),
-                  ),
-                  title: Text(
-                    'Rejoingnez la cummunoté ',
-                    style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: darkMode ? Colors.white : Colors.black),
+                child: Padding(
+                 padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Container(decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              borderRadius: BorderRadius.circular(10)),
+                    child: ListTile(
+                      leading: const Icon(
+                        Icons.telegram,
+                        color: Color.fromARGB(255, 32, 205, 38),
+                      ),
+                      title: Text(
+                        'Rejoignez la communauté ',
+                        style: GoogleFonts.openSans(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w800,
+                            color: darkMode ? Colors.white : Colors.black),
+                      ),
+                    ),
                   ),
                 ),
               ),
               const SizedBox(
                 height: 6,
               ),
-              ListTile(
-                leading: const Icon(
-                  Icons.question_answer,
-                  color: Color.fromARGB(255, 32, 55, 205),
-                ),
-                title: Text(
-                  'A propos de nous',
-                  style: GoogleFonts.openSans(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w800,
-                      color: darkMode ? Colors.white : Colors.black),
+              Padding(
+               padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Container(decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              borderRadius: BorderRadius.circular(10)),
+                  child: ListTile(
+                    leading: const Icon(
+                      Icons.question_answer,
+                      color: Color.fromARGB(255, 32, 55, 205),
+                    ),
+                    title: Text(
+                      'A propos de nous',
+                      style: GoogleFonts.openSans(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: darkMode ? Colors.white : Colors.black),
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -277,17 +357,28 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                     return Contacter_support();
                   }));
                 },
-                child: ListTile(
-                  leading: const Icon(
-                    Icons.help,
-                    color: Color.fromARGB(255, 32, 205, 38),
-                  ),
-                  title: Text(
-                    'Aide',
-                    style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: darkMode ? Colors.white : Colors.black),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Container(decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              borderRadius: BorderRadius.circular(10)),
+                    child: ListTile(
+                      leading: const Icon(
+                        Icons.help,
+                        color: Color.fromARGB(255, 32, 205, 38),
+                      ),
+                      title: Text(
+                        'Aide',
+                        style: GoogleFonts.openSans(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w800,
+                            color: darkMode ? Colors.white : Colors.black),
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -302,27 +393,39 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                     _iconbool = !_iconbool;
                   });
                 },
-                child: ListTile(
-                  leading: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        darkMode = !darkMode;
-                        _iconbool = !_iconbool;
-                      });
-                    },
-                    icon: Icon(_iconbool ? _iconObscure : _iconlumiere),
-                    color: darkMode
-                        ? Colors.white
-                        : Color.fromARGB(255, 247, 188, 13),
-                  ),
-                  title: Text(
-                    'Darck thême ',
-                    style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              borderRadius: BorderRadius.circular(10)),
+                    child: ListTile(
+                      leading: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            darkMode = !darkMode;
+                            _iconbool = !_iconbool;
+                          });
+                        },
+                        icon: Icon(_iconbool ? _iconObscure : _iconlumiere),
                         color: darkMode
                             ? Colors.white
-                            : Color.fromARGB(255, 18, 18, 17)),
+                            : Color.fromARGB(255, 247, 188, 13),
+                      ),
+                      title: Text(
+                        'Mode sombre ',
+                        style: GoogleFonts.openSans(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w800,
+                            color: darkMode
+                                ? Colors.white
+                                : Color.fromARGB(255, 18, 18, 17)),
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -335,17 +438,28 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                         }));
                   });
                 },
-                child: ListTile(
-                  leading: const Icon(
-                    Icons.logout,
-                    color: Color.fromARGB(255, 32, 205, 38),
-                  ),
-                  title: Text(
-                    'Déconecter',
-                    style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: darkMode ? Colors.white : Colors.black),
+                child: Padding(
+                 padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Container(decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              borderRadius: BorderRadius.circular(10)),
+                    child: ListTile(
+                      leading: const Icon(
+                        Icons.logout,
+                        color: Color.fromARGB(255, 32, 205, 38),
+                      ),
+                      title: Text(
+                        'Déconnexion',
+                        style: GoogleFonts.openSans(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w800,
+                            color: darkMode ? Colors.white : Colors.black),
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -369,7 +483,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                   GButton(
                     icon: Icons.home,
                     iconSize: 30,
-                    text: ('Acceuille'),
+                    text: ('Acceuil'),
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
@@ -403,24 +517,20 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                     icon: Icons.messenger,
                     iconSize: 30,
                     onPressed: () {},
-                    text: ('Chate'),
+                    text: ('Chat'),
                   )
                 ]),
           ),
         ),
         body: Column(
           children: [
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
-              height: 160,
-              width: 350,
-              decoration: const BoxDecoration(),
-              child: Expanded(
-                child: PageView(
-                  children: [
-                    Container(
+            Expanded(
+              child: PageView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(12.5),
+                    child: Container(
+                      height: 150,
                       width: 400,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
@@ -448,8 +558,13 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                         ),
                       ),
                     ),
-                    Container(),
-                    Container(
+                  ),
+                
+                  Padding(
+                    padding: const EdgeInsets.all(12.5),
+                    child: Container(
+                       height: 150,
+                      width: 400,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(7),
@@ -476,12 +591,12 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -519,7 +634,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 35,
                   ),
                   Container(
@@ -555,13 +670,13 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    width: 50,
+                  const  SizedBox(
+                    width: 30,
                   )
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -569,7 +684,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
-                  'oportunuité ',
+                  'opportunuités ',
                   style: GoogleFonts.openSans(
                       fontSize: 13.3,
                       fontWeight: FontWeight.w800,
@@ -577,11 +692,11 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Container(
-              height: 195,
+              height: 185,
               width: 350,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(17),
@@ -597,22 +712,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                         child: Padding(
                           padding: const EdgeInsets.all(15.0),
                           child: Text(
-                            'oportunuité 1',
-                            style: GoogleFonts.openSans(
-                                fontSize: 12.5,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.white),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Container(
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Text(
-                            'oportunuité 2',
+                            'opportunuité 1',
                             style: GoogleFonts.openSans(
                                 fontSize: 12.5,
                                 fontWeight: FontWeight.w900,
@@ -620,59 +720,14 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                     const  SizedBox(
                         height: 10,
                       ),
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.all(15.0),
                           child: Text(
-                            'oportunuité 3',
-                            style: GoogleFonts.openSans(
-                                fontSize: 12.5,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.black),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Container(
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Text(
-                            'oportunuité 1',
-                            style: GoogleFonts.openSans(
-                                fontSize: 12.5,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.blue),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Container(
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Text(
-                            'oportunuité 1',
-                            style: GoogleFonts.openSans(
-                                fontSize: 12.5,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.black),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Container(
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Text(
-                            'oportunuité 1',
+                            'opportunuité 1',
                             style: GoogleFonts.openSans(
                                 fontSize: 12.5,
                                 fontWeight: FontWeight.w900,
@@ -680,14 +735,14 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                     const   SizedBox(
                         height: 10,
                       ),
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.all(15.0),
                           child: Text(
-                            'oportunuité 1',
+                            'opportunuité 1',
                             style: GoogleFonts.openSans(
                                 fontSize: 12.5,
                                 fontWeight: FontWeight.w900,
@@ -695,14 +750,14 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const  SizedBox(
                         height: 10,
                       ),
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.all(15.0),
                           child: Text(
-                            'oportunuité 1',
+                            'opportunuité 1',
                             style: GoogleFonts.openSans(
                                 fontSize: 12.5,
                                 fontWeight: FontWeight.w900,
@@ -710,14 +765,14 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                     const  SizedBox(
                         height: 10,
                       ),
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.all(15.0),
                           child: Text(
-                            'oportunuité 1',
+                            'opportunuité 1',
                             style: GoogleFonts.openSans(
                                 fontSize: 12.5,
                                 fontWeight: FontWeight.w900,
@@ -725,14 +780,14 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                     const  SizedBox(
                         height: 10,
                       ),
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.all(15.0),
                           child: Text(
-                            'oportunuité 1',
+                            'opportunuité 1',
                             style: GoogleFonts.openSans(
                                 fontSize: 12.5,
                                 fontWeight: FontWeight.w900,
@@ -745,8 +800,8 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 35,
+            const SizedBox(
+              height: 15,
             ),
           ],
         ),

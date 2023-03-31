@@ -128,62 +128,89 @@ class _Profile_pageState extends State<Profile_page> {
           Padding(
             
             padding: const EdgeInsets.all(25.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Nom:' ,  style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: darkMode?Colors.white :Colors.black),),
-              const  SizedBox(
-                  width: 80,
-                ),
-                Text('${_person.Nom}'  ,  style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: darkMode?Colors.white :Colors.black),)],), ),
+            child: Container(
+               decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                             ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('Nom:' ,  style: GoogleFonts.openSans(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: darkMode?Colors.white :Colors.black),),
+                const  SizedBox(
+                    width: 80,
+                  ),
+                  Text('${_person.Nom}'  ,  style: GoogleFonts.openSans(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: darkMode?Colors.white :Colors.black),)],),
+            ), ),
           const SizedBox(
             height: 5,
           ),
           Padding(
             padding: const EdgeInsets.all(25.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Prénom:'  ,  style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: darkMode?Colors.white :Colors.black),),
-                SizedBox(
-                  width: 80,
-                ),
-                Text('${_person.Prennom}'  ,  style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color:darkMode?Colors.white : Colors.black),)],),),
+            child: Container(
+               decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                             ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('Prénom:'  ,  style: GoogleFonts.openSans(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: darkMode?Colors.white :Colors.black),),
+                  SizedBox(
+                    width: 80,
+                  ),
+                  Text('${_person.Prennom}'  ,  style: GoogleFonts.openSans(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color:darkMode?Colors.white : Colors.black),)],),
+            ),),
         const  SizedBox(
             height: 5,
           ),
           Padding(
             padding: const EdgeInsets.all(25.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Filière:'  ,  style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color:darkMode?Colors.white : Colors.black),),
-                const SizedBox(
-                  width: 80,
-                ),
-                Text('${_person.Faculte}'  ,  style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: darkMode?Colors.white :Colors.black),)
-              ],
+            child: Container(
+               decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                             ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('Filière:'  ,  style: GoogleFonts.openSans(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color:darkMode?Colors.white : Colors.black),),
+                  const SizedBox(
+                    width: 80,
+                  ),
+                  Text('${_person.Faculte}'  ,  style: GoogleFonts.openSans(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: darkMode?Colors.white :Colors.black),)
+                ],
+              ),
             ),
           ),
         const  SizedBox(
@@ -191,22 +218,31 @@ class _Profile_pageState extends State<Profile_page> {
           ),
           Padding(
             padding: const EdgeInsets.all(25.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Département:'  ,  style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: darkMode?Colors.white :Colors.black),),
-                SizedBox(
-                  width: 80,
-                ),
-                Text('${_person.Departement}'  ,  style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: darkMode?Colors.white :Colors.black),)
-              ],
+            child: Container(
+               decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('Département:'  ,  style: GoogleFonts.openSans(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: darkMode?Colors.white :Colors.black),),
+                  SizedBox(
+                    width: 80,
+                  ),
+                  Text('${_person.Departement}'  ,  style: GoogleFonts.openSans(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: darkMode?Colors.white :Colors.black),)
+                ],
+              ),
             ),
           ),
        const   SizedBox(
@@ -214,22 +250,31 @@ class _Profile_pageState extends State<Profile_page> {
           ),
           Padding(
             padding: const EdgeInsets.all(25.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Année d\'étude:'  ,  style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.black),),
-                SizedBox(
-                  width: 80,
-                ),
-                Text('${_person.Annee}'  ,  style: GoogleFonts.openSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.black),)
-              ],
+            child: Container(
+               decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('Année d\'étude:'  ,  style: GoogleFonts.openSans(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.black),),
+                  SizedBox(
+                    width: 80,
+                  ),
+                  Text('${_person.Annee}'  ,  style: GoogleFonts.openSans(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.black),)
+                ],
+              ),
             ),
           ),
         ],
@@ -241,10 +286,12 @@ class _Profile_pageState extends State<Profile_page> {
                 builder: (context) {
                   return Dialog(
                     child: AnimatedContainer(
+                     
                       duration: Duration(milliseconds: 500),
                       child: Container(
                         height: 500,
                         width: 300,
+                        
                         decoration: BoxDecoration(
                             color: Color.fromARGB(255, 191, 186, 186)),
                         child: SingleChildScrollView(
@@ -267,18 +314,27 @@ class _Profile_pageState extends State<Profile_page> {
                                 Padding(
                                   padding:
                                       const EdgeInsets.symmetric(horizontal: 10),
-                                  child: TextFormField(
-                                    controller: ContollerNom,
-                                    decoration: const InputDecoration(
-                                        enabledBorder: OutlineInputBorder(
-                                            borderSide:
-                                                BorderSide(color: Colors.black)),
-                                        border: OutlineInputBorder(
-                                            borderSide:
-                                                BorderSide(color: Colors.black)),
-                                        label: Text('nom' , ),
-                                        labelStyle:
-                                            TextStyle(color: Colors.white)),
+                                  child: Container(
+                                     decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              borderRadius: BorderRadius.circular(10)),
+                                    child: TextFormField(
+                                      controller: ContollerNom,
+                                      decoration: const InputDecoration(
+                                          enabledBorder: OutlineInputBorder(
+                                              borderSide:
+                                                  BorderSide(color: Colors.black)),
+                                          border: OutlineInputBorder(
+                                              borderSide:
+                                                  BorderSide(color: Colors.black)),
+                                          label: Text('nom' , ),
+                                          labelStyle:
+                                              TextStyle(color: Colors.blue)),
+                                    ),
                                   ),
                                 ),
                               const  SizedBox(
@@ -287,18 +343,27 @@ class _Profile_pageState extends State<Profile_page> {
                                 Padding(
                                   padding:
                                       const EdgeInsets.symmetric(horizontal: 10),
-                                  child: TextFormField(
-                                    controller: ContollerPrenom,
-                                    decoration: const InputDecoration(
-                                        enabledBorder: OutlineInputBorder(
-                                            borderSide:
-                                                BorderSide(color: Colors.black)),
-                                        border: OutlineInputBorder(
-                                            borderSide:
-                                                BorderSide(color: Colors.black)),
-                                        label: Text('prenom' ),
-                                        labelStyle:
-                                            TextStyle(color: Colors.white)),
+                                  child: Container(
+                                     decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              borderRadius: BorderRadius.circular(10)),
+                                    child: TextFormField(
+                                      controller: ContollerPrenom,
+                                      decoration: const InputDecoration(
+                                          enabledBorder: OutlineInputBorder(
+                                              borderSide:
+                                                  BorderSide(color: Colors.black)),
+                                          border: OutlineInputBorder(
+                                              borderSide:
+                                                  BorderSide(color: Colors.black)),
+                                          label: Text('prenom' ),
+                                          labelStyle:
+                                              TextStyle(color: Colors.blue)),
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
@@ -306,43 +371,52 @@ class _Profile_pageState extends State<Profile_page> {
                                 ),
                                 Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 10),
-                                  child: TextFormField(
-                                    controller: ContollerFiliere,
-                                    decoration: InputDecoration(
-                                        enabledBorder: OutlineInputBorder(
-                                            borderSide:
-                                                BorderSide(color: Colors.black)),
-                                        border: const OutlineInputBorder(
-                                            borderSide:
-                                                BorderSide(color: Colors.black)),
-                                        label: Text('Faculté'),
-                                        suffixIcon: DropdownButton(
-                                          value: _Filierecelctione,
-                                          items: <String>[
-                                            'FLESH',
-                                            ' FSS',
-                                            'FDSP',
-                                            'FaSEG',
-                                            'FaST',
-                                            'ISMA'
-                                          ].map<DropdownMenuItem<String>>(
-                                              (String value) {
-                                            return DropdownMenuItem<String>(
-                                              value: value,
-                                              child: Text(value),
-                                            );
-                                          }).toList(),
-                                          onChanged: (String? newValue) {
-
-                                            // ici pour choisir la filière 
-                                            setState(() {
-                                              _Filierecelctione = newValue!;
-                                              ContollerFiliere.text = newValue;
-                                            });
-                                          },
-                                        ),
-                                        labelStyle:
-                                            TextStyle(color: Colors.white)),
+                                  child: Container(
+                                     decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              borderRadius: BorderRadius.circular(10)),
+                                    child: TextFormField(
+                                      controller: ContollerFiliere,
+                                      decoration: InputDecoration(
+                                          enabledBorder: OutlineInputBorder(
+                                              borderSide:
+                                                  BorderSide(color: Colors.black)),
+                                          border: const OutlineInputBorder(
+                                              borderSide:
+                                                  BorderSide(color: Colors.black)),
+                                          label: Text('Faculté'),
+                                          suffixIcon: DropdownButton(
+                                            value: _Filierecelctione,
+                                            items: <String>[
+                                              'FLESH',
+                                              ' FSS',
+                                              'FDSP',
+                                              'FaSEG',
+                                              'FaST',
+                                              'ISMA'
+                                            ].map<DropdownMenuItem<String>>(
+                                                (String value) {
+                                              return DropdownMenuItem<String>(
+                                                value: value,
+                                                child: Text(value),
+                                              );
+                                            }).toList(),
+                                            onChanged: (String? newValue) {
+                                  
+                                              // ici pour choisir la filière 
+                                              setState(() {
+                                                _Filierecelctione = newValue!;
+                                                ContollerFiliere.text = newValue;
+                                              });
+                                            },
+                                          ),
+                                          labelStyle:
+                                              TextStyle(color: Colors.blue)),
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
@@ -351,18 +425,27 @@ class _Profile_pageState extends State<Profile_page> {
                                 Padding(
                                   padding:
                                       const EdgeInsets.symmetric(horizontal: 10),
-                                  child: TextFormField(
-                                    controller: ContollerDepartement,
-                                    decoration: const InputDecoration(
-                                        enabledBorder: OutlineInputBorder(
-                                            borderSide:
-                                                BorderSide(color: Colors.black)),
-                                        border: OutlineInputBorder(
-                                            borderSide:
-                                                BorderSide(color: Colors.black)),
-                                        label: Text('Département'),
-                                        labelStyle:
-                                            TextStyle(color: Colors.white)),
+                                  child: Container(
+                                     decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black:Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              borderRadius: BorderRadius.circular(10)),
+                                    child: TextFormField(
+                                      controller: ContollerDepartement,
+                                      decoration: const InputDecoration(
+                                          enabledBorder: OutlineInputBorder(
+                                              borderSide:
+                                                  BorderSide(color: Colors.black)),
+                                          border: OutlineInputBorder(
+                                              borderSide:
+                                                  BorderSide(color: Colors.black)),
+                                          label: Text('Département'),
+                                          labelStyle:
+                                              TextStyle( color: Colors.blue)),
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
@@ -371,43 +454,52 @@ class _Profile_pageState extends State<Profile_page> {
                                 Padding(
                                   padding:
                                       const EdgeInsets.symmetric(horizontal: 10),
-                                  child: TextFormField(
-                                    controller: ContollerAnnee,
-                                    decoration:  InputDecoration(
-                                        enabledBorder: const OutlineInputBorder(
-                                            borderSide:
-                                                BorderSide(color: Colors.black)),
-                                        border: const OutlineInputBorder(
-                                            borderSide:
-                                                BorderSide(color: Colors.black)),
-                                                
-                                            suffixIcon: DropdownButton(
-                                          value: _Filierecelctione,
-                                          items: <String>[
-                                            '2022-2023',
-                                            ' 2023-2024',
-                                            '2025-2026',
-                                            '2026-2027',
-                                            '2027-2028',
-                                            '2028-2029','2029-2030'
-                                          ].map<DropdownMenuItem<String>>(
-                                              (String value) {
-                                            return DropdownMenuItem<String>(
-                                              value: value,
-                                              child: Text(value),
-                                            );
-                                          }).toList(),
-                                          onChanged: (String? newValue) {
-                                            setState(() {
-                                              _Anneeselection = newValue!;
-                                              ContollerAnnee.text = newValue;
-                                            });
-                                          },
-                                        ),
-                                          
-                                        label: Text('année scolaire'),
-                                        labelStyle:
-                                            TextStyle(color: Colors.white)),
+                                  child: Container(
+                                     decoration: BoxDecoration(
+                      gradient: LinearGradient(begin: Alignment.topCenter,
+                      end:Alignment.bottomCenter,
+                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
+                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
+                       ),
+                              borderRadius: BorderRadius.circular(10)),
+                                    child: TextFormField(
+                                      controller: ContollerAnnee,
+                                      decoration:  InputDecoration(
+                                          enabledBorder: const OutlineInputBorder(
+                                              borderSide:
+                                                  BorderSide(color: Colors.black)),
+                                          border: const OutlineInputBorder(
+                                              borderSide:
+                                                  BorderSide(color: Colors.black)),
+                                                  
+                                              suffixIcon: DropdownButton(
+                                            value: _Filierecelctione,
+                                            items: <String>[
+                                              '2022-2023',
+                                              ' 2023-2024',
+                                              '2025-2026',
+                                              '2026-2027',
+                                              '2027-2028',
+                                              '2028-2029','2029-2030'
+                                            ].map<DropdownMenuItem<String>>(
+                                                (String value) {
+                                              return DropdownMenuItem<String>(
+                                                value: value,
+                                                child: Text(value),
+                                              );
+                                            }).toList(),
+                                            onChanged: (String? newValue) {
+                                              setState(() {
+                                                _Anneeselection = newValue!;
+                                                ContollerAnnee.text = newValue;
+                                              });
+                                            },
+                                          ),
+                                            
+                                          label: Text('année scolaire'),
+                                          labelStyle:
+                                              TextStyle(color: Colors.blue)),
+                                    ),
                                   ),
                                 ),
                                 // ignore: prefer_const_constructors
@@ -446,7 +538,7 @@ class _Profile_pageState extends State<Profile_page> {
                                         style: GoogleFonts.inter(
                                             fontSize: 15,
                                             fontWeight: FontWeight.w800,
-                                            color: Colors.white),
+                                            color: Colors.blue),
                                       ),
                                     ),
                                   ),

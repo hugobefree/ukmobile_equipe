@@ -7,23 +7,25 @@ import 'package:ukmoblie/les%20premi%C3%A8res%20pages/pageconnexion.dart';
 import 'accèsapli/pageacceuille.dart';
 
 void main() async {
+  
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
+  runApp(MyApp(
+    
       home: FirebaseAuth.instance.currentUser == null
           ? COnnexion()
           :Page_acceuille() ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, required StatefulWidget home});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
      
       home: Homepage(),
     );

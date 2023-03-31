@@ -146,7 +146,7 @@ class _ImmobilierState extends State<Immobilier> {
                                            ),
                                              child: Padding(
                                                padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 7),
-                                               child: Text('Clicque ici' , style: GoogleFonts.openSans(
+                                               child: Text('Clique ici' , style: GoogleFonts.openSans(
                                                                      fontSize: 15, 
                                                                      fontWeight: FontWeight.bold,
                                                                      color: Colors.white
@@ -204,7 +204,7 @@ class _ImmobilierState extends State<Immobilier> {
                                            ),
                                                child: Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 7),
-                                                 child: Text('Clicque ici' , style: GoogleFonts.openSans(
+                                                 child: Text('Clique ici' , style: GoogleFonts.openSans(
                                                                        fontSize: 15, 
                                                                        fontWeight: FontWeight.bold,
                                                                        color: Colors.white
@@ -257,7 +257,7 @@ class _ImmobilierState extends State<Immobilier> {
                                            
                                            child: Padding(
                                              padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 7),
-                                             child: Text('Clicque ici' , style: GoogleFonts.openSans(
+                                             child: Text('Clique ici' , style: GoogleFonts.openSans(
                                                                    fontSize: 15, 
                                                                    fontWeight: FontWeight.bold,
                                                                    color: Colors.white
@@ -418,7 +418,7 @@ class _ImmobilierState extends State<Immobilier> {
                                            
                                            child: Padding(
                                              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                                             child: Text('Clicque ici' , style: GoogleFonts.openSans(
+                                             child: Text('Clique ici' , style: GoogleFonts.openSans(
                                                                    fontSize: 15, 
                                                                    fontWeight: FontWeight.bold,
                                                                    color: Colors.white

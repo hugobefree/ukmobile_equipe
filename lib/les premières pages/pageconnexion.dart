@@ -37,9 +37,7 @@ class _COnnexionState extends State<COnnexion> {
             key: _keyfrom,
             child: Column(
               children: [
-                const SizedBox(
-                  height: 50,
-                ),
+               
                 Container(
                     height: 120,
                     width: 265,
@@ -156,19 +154,25 @@ class _COnnexionState extends State<COnnexion> {
 
                 GestureDetector(
                   onTap: () async {
-                    // ici on verifie si l'utilisateur à entré les bonnes information ou pas
-                     await FirebaseAuth.instance.signInWithEmailAndPassword(
-                            email: _mailcontroller.text,
-                            password: _pawrdcontroller.text);
-                    /* ici le if permet de s'assurer que l'utilisateur entre du text*/
-
-                    if (_keyfrom.currentState!.validate())  {
-                        Navigator.push(context,
+                   
+                   try {
+                     if (_keyfrom.currentState!.validate())  {}
+  final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+    email: _mailcontroller.text,
+    password: _pawrdcontroller.text,
+  );    Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
                           return const Page_acceuille();
                         }));
-                      
-                    }
+} on FirebaseAuthException catch (e) {
+  if (e.code == 'user-not-found') {
+    print('No user found for that email.');
+  } else if (e.code == 'wrong-password') {
+    print('Wrong password provided for that user.');
+  }
+}               
+ // ici on verifie si l'utilisateur à entré les bonnes information ou pas
+                   
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
