@@ -1,8 +1,11 @@
+
+
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:ukmoblie/acc%C3%A8sapli/model_annonce.dart';
+import 'package:ukmoblie/acc%C3%A8sapli/page_info_annonce.dart';
 import 'package:ukmoblie/color%20model/model_couleur.dart';
 import 'package:ukmoblie/les%20premi%C3%A8res%20pages/pageconnexion.dart';
 import 'package:ukmoblie/mespages/Eticketpage.dart';
@@ -14,15 +17,6 @@ import 'package:ukmoblie/mespages/programme/pageprogrammNord.dart';
 import 'package:ukmoblie/mespages/programme/programmeSud.dart';
 import 'package:ukmoblie/mespages/support_page/contacter_support.dart';
 
-import '../main.dart';
-
-class telegrambutton {
-  final String CanalName;
-  final String Lientelegram;
-
-  const telegrambutton({required this.CanalName, required this.Lientelegram});
-}
-
 class Page_acceuille extends StatefulWidget {
   const Page_acceuille({
     super.key,
@@ -33,9 +27,41 @@ class Page_acceuille extends StatefulWidget {
 }
 
 class _Page_acceuilleState extends State<Page_acceuille> {
+  /* ici on cré un controller qui va controller le défilement automatic de la liste view */
+  ScrollController _scrollController = ScrollController();
+
   bool _iconbool = false;
   IconData _iconlumiere = Icons.wb_sunny;
   IconData _iconObscure = Icons.nights_stay;
+
+  /*ici je vais creer les paramettre du des liens télégrame et youtube */
+
+  final Uri UrlTelegram = Uri.parse("https://t.me/+p_SyqlBTFBgyOGVk");
+
+  /* ici on initialise le scoller */
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      double minScrollelement = _scrollController.position.minScrollExtent;
+      double maxScrollelement = _scrollController.position.maxScrollExtent;
+
+      animateToMaxMin(maxScrollelement, minScrollelement, maxScrollelement, 25,
+          _scrollController);
+    });
+  }
+
+  animateToMaxMin(double max, double min, double direction, int seconds,
+      ScrollController scrollController) {
+    scrollController
+        .animateTo(direction,
+            duration: Duration(seconds: seconds), curve: Curves.linear)
+        .then((value) {
+      direction = direction == max ? min : max;
+      animateToMaxMin(max, min, direction, seconds, scrollController);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -134,14 +160,18 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Container(
-                    
-                   decoration: BoxDecoration(
-                    gradient: LinearGradient(begin: Alignment.topCenter,
-                    end:Alignment.bottomCenter,
-                    colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
-                     darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
-                     ),
-                            borderRadius: BorderRadius.circular(10)),
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode
+                                  ? Colors.grey.shade600
+                                  : Colors.grey.shade200
+                            ]),
+                        borderRadius: BorderRadius.circular(10)),
                     child: ListTile(
                       leading: Icon(
                         Icons.person,
@@ -171,14 +201,19 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Container(
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(begin: Alignment.topCenter,
-                      end:Alignment.bottomCenter,
-                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
-                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
-                       ),
-                              borderRadius: BorderRadius.circular(10)),
+                        gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode
+                                  ? Colors.grey.shade600
+                                  : Colors.grey.shade200
+                            ]),
+                        borderRadius: BorderRadius.circular(10)),
                     child: ListTile(
-                      leading:  Icon(
+                      leading: Icon(
                         Icons.home,
                         color: Color.fromARGB(255, 205, 202, 32),
                       ),
@@ -204,13 +239,19 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Container(decoration: BoxDecoration(
-                      gradient: LinearGradient(begin: Alignment.topCenter,
-                      end:Alignment.bottomCenter,
-                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
-                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
-                       ),
-                              borderRadius: BorderRadius.circular(10)),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode
+                                  ? Colors.grey.shade600
+                                  : Colors.grey.shade200
+                            ]),
+                        borderRadius: BorderRadius.circular(10)),
                     child: ListTile(
                       leading: Icon(
                         Icons.work,
@@ -237,14 +278,20 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                   }));
                 },
                 child: Padding(
-                 padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Container(decoration: BoxDecoration(
-                      gradient: LinearGradient(begin: Alignment.topCenter,
-                      end:Alignment.bottomCenter,
-                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
-                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
-                       ),
-                              borderRadius: BorderRadius.circular(10)),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode
+                                  ? Colors.grey.shade600
+                                  : Colors.grey.shade200
+                            ]),
+                        borderRadius: BorderRadius.circular(10)),
                     child: ListTile(
                       leading: Icon(
                         Icons.store,
@@ -264,26 +311,35 @@ class _Page_acceuilleState extends State<Page_acceuille> {
               const SizedBox(
                 height: 6,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Container(decoration: BoxDecoration(
-                      gradient: LinearGradient(begin: Alignment.topCenter,
-                      end:Alignment.bottomCenter,
-                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
-                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
-                       ),
-                              borderRadius: BorderRadius.circular(10)),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.tv,
-                      color: Color.fromARGB(255, 32, 38, 205),
-                    ),
-                    title: Text(
-                      'visualiser les actualités',
-                      style: GoogleFonts.openSans(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w800,
-                          color: darkMode ? Colors.white : Colors.black),
+              GestureDetector(
+                onTap: () {},
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode
+                                  ? Colors.grey.shade600
+                                  : Colors.grey.shade200
+                            ]),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.tv,
+                        color: Color.fromARGB(255, 32, 38, 205),
+                      ),
+                      title: Text(
+                        'visualiser les actualités',
+                        style: GoogleFonts.openSans(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w800,
+                            color: darkMode ? Colors.white : Colors.black),
+                      ),
                     ),
                   ),
                 ),
@@ -294,16 +350,22 @@ class _Page_acceuilleState extends State<Page_acceuille> {
 
               // ici j'ai créé un boutton pour rejoindre un canal télégram qui sera le notre
               GestureDetector(
-                onTap: () {},
+                onTap: () { },
                 child: Padding(
-                 padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Container(decoration: BoxDecoration(
-                      gradient: LinearGradient(begin: Alignment.topCenter,
-                      end:Alignment.bottomCenter,
-                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
-                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
-                       ),
-                              borderRadius: BorderRadius.circular(10)),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode
+                                  ? Colors.grey.shade600
+                                  : Colors.grey.shade200
+                            ]),
+                        borderRadius: BorderRadius.circular(10)),
                     child: ListTile(
                       leading: const Icon(
                         Icons.telegram,
@@ -324,14 +386,20 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                 height: 6,
               ),
               Padding(
-               padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Container(decoration: BoxDecoration(
-                      gradient: LinearGradient(begin: Alignment.topCenter,
-                      end:Alignment.bottomCenter,
-                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
-                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
-                       ),
-                              borderRadius: BorderRadius.circular(10)),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Container(
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            darkMode ? Colors.black : Colors.white,
+                            darkMode ? Colors.black : Colors.white,
+                            darkMode
+                                ? Colors.grey.shade600
+                                : Colors.grey.shade200
+                          ]),
+                      borderRadius: BorderRadius.circular(10)),
                   child: ListTile(
                     leading: const Icon(
                       Icons.question_answer,
@@ -359,13 +427,19 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Container(decoration: BoxDecoration(
-                      gradient: LinearGradient(begin: Alignment.topCenter,
-                      end:Alignment.bottomCenter,
-                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
-                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
-                       ),
-                              borderRadius: BorderRadius.circular(10)),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode
+                                  ? Colors.grey.shade600
+                                  : Colors.grey.shade200
+                            ]),
+                        borderRadius: BorderRadius.circular(10)),
                     child: ListTile(
                       leading: const Icon(
                         Icons.help,
@@ -397,12 +471,17 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Container(
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(begin: Alignment.topCenter,
-                      end:Alignment.bottomCenter,
-                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
-                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
-                       ),
-                              borderRadius: BorderRadius.circular(10)),
+                        gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode
+                                  ? Colors.grey.shade600
+                                  : Colors.grey.shade200
+                            ]),
+                        borderRadius: BorderRadius.circular(10)),
                     child: ListTile(
                       leading: IconButton(
                         onPressed: () {
@@ -432,21 +511,27 @@ class _Page_acceuilleState extends State<Page_acceuille> {
               GestureDetector(
                 onTap: () async {
                   FirebaseAuth.instance.signOut().then((value) {
-                      Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return const COnnexion();
-                        }));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const COnnexion();
+                    }));
                   });
                 },
                 child: Padding(
-                 padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Container(decoration: BoxDecoration(
-                      gradient: LinearGradient(begin: Alignment.topCenter,
-                      end:Alignment.bottomCenter,
-                      colors: [darkMode?Colors.black :Colors.white ,darkMode?Colors.black :Colors.white ,
-                       darkMode?Colors.grey.shade600  :Colors.grey.shade200 ]
-                       ),
-                              borderRadius: BorderRadius.circular(10)),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode ? Colors.black : Colors.white,
+                              darkMode
+                                  ? Colors.grey.shade600
+                                  : Colors.grey.shade200
+                            ]),
+                        borderRadius: BorderRadius.circular(10)),
                     child: ListTile(
                       leading: const Icon(
                         Icons.logout,
@@ -559,11 +644,10 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                       ),
                     ),
                   ),
-                
                   Padding(
                     padding: const EdgeInsets.all(12.5),
                     child: Container(
-                       height: 150,
+                      height: 150,
                       width: 400,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
@@ -630,51 +714,9 @@ class _Page_acceuilleState extends State<Page_acceuille> {
             const SizedBox(
               height: 9,
             ),
-            Expanded(
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  const SizedBox(
-                    width: 35,
-                  ),
-                  Container(
-                    height: 65,
-                    width: 350,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(17),
-                      color: Colors.yellow,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 5, vertical: 5),
-                      child: Image.asset(
-                        "image/p41.png",
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 50,
-                  ),
-                  Container(
-                    height: 65,
-                    width: 350,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(17),
-                      color: Color.fromARGB(255, 245, 244, 241),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 5, vertical: 5),
-                      child: Image.asset(
-                        "image/p41.png",
-                      ),
-                    ),
-                  ),
-                  const  SizedBox(
-                    width: 30,
-                  )
-                ],
-              ),
+            Annonce_ifon(
+              scrollController: _scrollController,
+              image: image,
             ),
             const SizedBox(
               height: 10,
@@ -720,7 +762,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                           ),
                         ),
                       ),
-                     const  SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Container(
@@ -735,7 +777,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                           ),
                         ),
                       ),
-                     const   SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Container(
@@ -750,7 +792,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                           ),
                         ),
                       ),
-                      const  SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Container(
@@ -765,7 +807,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                           ),
                         ),
                       ),
-                     const  SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Container(
@@ -780,7 +822,7 @@ class _Page_acceuilleState extends State<Page_acceuille> {
                           ),
                         ),
                       ),
-                     const  SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Container(
